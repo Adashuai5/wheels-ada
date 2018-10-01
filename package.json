@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Adashuai5/wheels/issues"
   },
-  "homepage": "https://github.com/Adashuai5/wheels#readme"
+  "homepage": "https://github.com/Adashuai5/wheels#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
