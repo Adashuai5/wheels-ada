@@ -7,7 +7,7 @@
     export default {
         mounted(){
             for(let node of this.$el.children){
-                let name = node.nodeName.toLowerCase()
+                let name = node.nodeName.toLowerCase();
                 if( name !== 'button'){
                     console.warn(`g-button-group 的子元素应该均为 g-button ，而你的有 ${name}`)
                 }
@@ -20,7 +20,9 @@
         display: inline-flex;
         vertical-align: middle;
         > .g-button {
-            margin-left: -1px;
+            &:not(:first-child){
+                margin-left: -1px;
+            }
             &:hover{
                 position: relative;
                 z-index: 1;
