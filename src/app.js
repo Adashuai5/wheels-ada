@@ -18,6 +18,9 @@ new Vue({
 
 // 单元测试
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
+
 const expect = chai.expect
 
 {
@@ -77,6 +80,21 @@ const expect = chai.expect
     let svg = vm.$el.querySelector('svg')
     let {order} = window.getComputedStyle(svg)
     expect(order).to.eq('2')
+    vm.$el.remove()
+    vm.$destroy()
+}
+{
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+        propsData: {
+            icon: 'settings'
+        }
+    })
+    vm.$mount()
+    const spy = chai.spy(()=>{})
+    vm.$on('click', spy)
+    vm.$el.click()
+    expect(spy).to.have.been.called
     vm.$el.remove()
     vm.$destroy()
 }
