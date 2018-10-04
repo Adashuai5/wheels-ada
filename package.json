@@ -1,5 +1,5 @@
 {
-  "name": "wheels",
+  "name": "adashuai5",
   "version": "0.0.1",
   "description": "这是一个 UI 框架",
   "main": "dist/index.js",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Adashuai5/wheels#readme",
   "dependencies": {
+    "parcel": "^1.10.1",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.1"
   },
