@@ -8,9 +8,12 @@
     <title>轮子</title>
     <style>
         * {margin: 0;padding: 0;box-sizing: border-box}
+
         :root {--button-height: 32px;--font-size: 14px;--button-bg: white;--button-active-bg: #eee;
             --button-radius: 4px;--color: #333;--border-color: #999;--border-color-hover: #666;}
+
         #app {margin: 20px;}
+
         body {font-size: var(--font-size);}
     </style>
     <style>
@@ -21,8 +24,11 @@
 <div id="app">
     <div class="box">
         <g-input value="张三" disabled></g-input>
-        <g-input value="李四" readonly></g-input>
+        <g-input value="李四" read-only></g-input>
         <g-input value="王五"></g-input>
+    </div>
+    <div class="box">
+        <g-input value="王" @change="inputChange"></g-input>
     </div>
     <div class="box">
         <g-input value="王" error="姓名不能少于两个字"></g-input>

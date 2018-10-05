@@ -76,6 +76,5 @@ describe('Button', () => {
         vm.$on('click', callback)
         vm.$el.click()
         expect(callback).to.have.been.called
-
     })
 })
