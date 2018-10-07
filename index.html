@@ -8,28 +8,33 @@
     <title>轮子</title>
     <style>
         * {margin: 0;padding: 0;box-sizing: border-box}
+
         *::before, *::after {box-sizing: border-box}
+
         :root {--button-height: 32px;--font-size: 14px;--button-bg: white;--button-active-bg: #eee;
             --button-radius: 4px;--color: #333;--border-color: #999;--border-color-hover: #666;}
-        #app {margin: 20px;}
+
+        #app {}
+
         body {font-size: var(--font-size);}
-        .box {margin: 20px;}
     </style>
     <style>
         .demo {
-            background: #aaa;
             border: 1px solid #666;
-            height: 100px;
+            min-height: 100px;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <g-row>
-        <g-col span="23" offset="1" :pc="{span:12,offset:12}">
-            <div class="demo"></div>
-        </g-col>
-    </g-row>
+    <g-layout style="height: 100vh">
+        <g-sider class="demo">sider</g-sider>
+        <g-layout>
+            <g-header class="demo">header</g-header>
+            <g-content class="demo">content</g-content>
+            <g-footer class="demo">footer</g-footer>
+        </g-layout>
+    </g-layout>
 </div>
 <script src="./src/app.js"></script>
 </body>
