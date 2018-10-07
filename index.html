@@ -20,68 +20,36 @@
 
         .box {margin: 20px;}
     </style>
+    <style>
+        .demo {
+            background: #aaa;
+            border: 1px solid #666;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
-    <div style="border: 1px solid black">
-        <g-row gutter="20">
-            <g-col span="24"
-                   :ipad="{span:8}"
-                   :narrow-pc="{span:4}"
-                   :pc="{span:2}"
-                   :wide-pc="{span:1}"
-            >3</g-col>
-            <g-col span="24"
-                   :ipad="{span:16}"
-                   :narrow-pc="{span:20}"
-                   :pc="{span:22}"
-                   :wide-pc="{span:23}"
-            >3</g-col>
-        </g-row>
-        <g-row gutter="20">
-            <g-col span="4">4</g-col>
-            <g-col span="18" offset="2">4</g-col>
-        </g-row>
-        <g-row gutter="20">
-            <g-col span="5"></g-col>
-            <g-col span="17" offset="2">5</g-col>
-        </g-row>
-        <g-row gutter="20">
-            <g-col span="6"></g-col>
-            <g-col span="16" offset="2">6</g-col>
-        </g-row>
-        <g-row gutter="20">
-            <g-col span="7"></g-col>
-            <g-col span="15" offset="2">7</g-col>
-        </g-row>
-    </div>
-    <div class="box">
-        <g-input value="张三" disabled></g-input>
-        <g-input value="李四" read-only></g-input>
-        <g-input value="王五"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="王" @change="inputChange"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="王" error="姓名不能少于两个字"></g-input>
-    </div>
-    <div class="box">
-        <g-button :loading="loading1" @click="loading1 = !loading1">
-            按钮
-        </g-button>
-        <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
-            按钮
-        </g-button>
-        <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
-            按钮
-        </g-button>
-        <g-button-group>
-            <g-button icon="left" icon-position="left">上一页</g-button>
-            <g-button>更多</g-button>
-            <g-button icon="right" icon-position="right">下一页</g-button>
-        </g-button-group>
-    </div>
+    <g-row>
+        <g-col span="24" :pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+        <g-col span="24" :pc="{span:8}">
+            <div class="demo"></div>
+        </g-col>
+    </g-row>
 </div>
 <script src="./src/app.js"></script>
 </body>
