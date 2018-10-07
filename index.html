@@ -8,16 +8,11 @@
     <title>轮子</title>
     <style>
         * {margin: 0;padding: 0;box-sizing: border-box}
-
         *::before, *::after {box-sizing: border-box}
-
         :root {--button-height: 32px;--font-size: 14px;--button-bg: white;--button-active-bg: #eee;
             --button-radius: 4px;--color: #333;--border-color: #999;--border-color-hover: #666;}
-
         #app {margin: 20px;}
-
         body {font-size: var(--font-size);}
-
         .box {margin: 20px;}
     </style>
     <style>
@@ -31,22 +26,7 @@
 <body>
 <div id="app">
     <g-row>
-        <g-col span="24" :pc="{span:8}">
-            <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pc="{span:8}">
-            <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pc="{span:8}">
-            <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pc="{span:8}">
-            <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pc="{span:8}">
-            <div class="demo"></div>
-        </g-col>
-        <g-col span="24" :pc="{span:8}">
+        <g-col span="23" offset="1" :pc="{span:12,offset:12}">
             <div class="demo"></div>
         </g-col>
     </g-row>
