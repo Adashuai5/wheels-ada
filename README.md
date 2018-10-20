@@ -1,6 +1,6 @@
 # wheels: 用 Vue 写一个 UI 组件
 
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![Build Status](https://travis-ci.org/Adashuai5/wheels.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 
 ## 介绍
 
