@@ -3,7 +3,6 @@
         <div class="sider" v-if="visible">
             <slot></slot>
             <button @click="visible=false">close</button>
-            <p v-if="show">hello</p>
         </div>
     </transition>
 </template>
