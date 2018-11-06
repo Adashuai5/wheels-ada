@@ -34,11 +34,19 @@ new Vue({
         loading2: true,
         loading3: false
     },
-    created(){
+    created() {
     },
     methods: {
-        showToast(){
-            this.$toast('更新成功')
+        showToast() {
+            this.$toast('更新成功', {
+                closeButton: {
+                    text: '知道了',
+                    callback(toast) {
+                        toast.log()
+                        console.log('用户知道了')
+                    }
+                }
+            })
         }
     }
 });
