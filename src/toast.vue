@@ -1,7 +1,10 @@
 <template>
-    <div class="toast">
-        <slot></slot>
-        <div class="line"></div>
+    <div class="toast" ref="toast">
+        <div class="wrapper">
+            <slot v-if="!enableHTML"></slot>
+            <div v-if="enableHTML" v-html="$slots.default[0]"></div>
+        </div>
+        <div class="line" ref="line"></div>
         <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
     </div>
 </template>
@@ -25,16 +28,30 @@
                         callback: undefined
                     }
                 }
+            },
+            enableHTML: {
+                type: Boolean,
+                default: false
             }
         },
         mounted() {
-            if (this.autoClose) {
-                setTimeout(() => {
-                    this.close()
-                }, this.autoCloseDelay * 1000)
-            }
+            this.updateStyles()
+            this.execAutoClose()
         },
         methods: {
+            updateStyles() {
+                this.$nextTick(() => {
+                    this.$refs.line.style.height =
+                        `${this.$refs.toast.getBoundingClientRect().height}px`
+                })
+            },
+            execAutoClose() {
+                if (this.autoClose) {
+                    setTimeout(() => {
+                        this.close()
+                    }, this.autoCloseDelay * 1000)
+                }
+            },
             close() {
                 this.$el.remove()
                 this.$destroy()
@@ -53,10 +70,10 @@
 <style scoped lang="scss">
     $font-size: 14px;
     $toast-bg: rgba(0, 0, 0, 0.75);
-    $toast-height: 40px;
+    $toast-min-height: 40px;
     .toast {
         font-size: $font-size;
-        height: $toast-height;
+        min-height: $toast-min-height;
         line-height: 1.8rem;
         background: $toast-bg;
         color: #fff;
@@ -69,15 +86,18 @@
         padding: 0 16px;
         display: flex;
         align-items: center;
-    }
+        .wrapper {
+            margin: 6px 0;
+        }
+        .close {
+            padding-left: 16px;
+            flex-shrink: 0;
+        }
 
-    .close {
-        padding-left: 16px;
-    }
-
-    .line {
-        border-left: 1px solid #ddd;
-        height: 100%;
-        margin-left: 16px;
+        .line {
+            border-left: 1px solid #d4d4d4;
+            height: 100%;
+            margin-left: 16px;
+        }
     }
 </style>
