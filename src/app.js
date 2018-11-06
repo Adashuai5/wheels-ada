@@ -40,7 +40,8 @@ new Vue({
         showToast() {
             this.$toast('更新成功', {
                 enableHTML: false,
-                autoClose: false
+                autoClose: false,
+                position: 'middle'
             })
         }
     }
