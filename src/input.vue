@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" :class="{error}">
+    <div class="message" :class="{error}">
         <input type="test" :value="value" :disabled="disabled" :readonly="readOnly"
                @change="$emit('change', $event.target.value)"
                @input="$emit('input', $event.target.value)"
@@ -44,7 +44,7 @@
     $input-radius: 4px;
     $box-shadow-color: rgba(0, 0, 0, 0.5);
     $red: #F1453D;
-    .wrapper {font-size: $font-size;display: inline-flex;align-items: center;
+    .message {font-size: $font-size;display: inline-flex;align-items: center;
         > :not(:last-child) {margin-right: .5em;}
         > input {padding: 0 8px;height: $input-height;border: 1px solid $border-color;
             font-size: inherit;border-radius: $input-radius;
