@@ -37,11 +37,17 @@ new Vue({
     created() {
     },
     methods: {
-        showToast1(){this.showToast('middle')},
-        showToast2(){this.showToast('top')},
-        showToast3(){this.showToast('bottom')},
+        showToast1() {
+            this.showToast('middle')
+        },
+        showToast2() {
+            this.showToast('top')
+        },
+        showToast3() {
+            this.showToast('bottom')
+        },
         showToast(position) {
-            this.$toast(`更新成功,第${parseInt(Math.random()*100)}号按钮`, {
+            this.$toast(`更新成功,第${parseInt(Math.random() * 100)}号按钮`, {
                 enableHTML: false,
                 autoClose: false,
                 position
