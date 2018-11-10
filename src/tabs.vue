@@ -4,6 +4,8 @@
     </div>
 </template>
 <script>
+    import Vue from 'vue'
+
     export default {
         name: "WheelsTabs",
         props: {
@@ -19,11 +21,23 @@
                 }
             }
         },
-        created() {
+        data() {
+            return {
+                eventBus: new Vue()
+            }
+        },
+        provide() {
+            return {
+                eventBus: this.eventBus
+            }
+        },
+        mounted() {
+            this.eventBus.$emit('update:selected', this.selected)
             // this.$emit('update:selected','')
         }
     }
 </script>
-<style scoped>
-    .tabs {}
+<style scoped lang="scss">
+    .tabs {
+    }
 </style>

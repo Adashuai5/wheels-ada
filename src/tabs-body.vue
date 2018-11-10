@@ -5,7 +5,10 @@
 </template>
 <script>
     export default {
-        name: "WheelsTabsBody"
+        name: "WheelsTabsBody",
+        inject: ['eventBus'],
+        created(){
+        }
     }
 </script>
 <style scoped>
