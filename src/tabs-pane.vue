@@ -33,10 +33,9 @@
     }
 </script>
 <style scoped lang="scss">
-    $color: #4A90E2;
     .tabs-item {
+        padding: 1em;
         &.active{
-            background: $color;
         }
     }
 </style>
