@@ -7,10 +7,10 @@
     export default {
         name: "WheelsTabsItem",
         inject: ['eventBus'],
-        data(){
-          return{
-              active: true
-          }
+        data() {
+            return {
+                active: true
+            }
         },
         props: {
             disabled: {
@@ -22,8 +22,8 @@
                 required: true
             }
         },
-        computed:{
-            classes(){
+        computed: {
+            classes() {
                 return {
                     active: this.active
                 }
@@ -36,14 +36,14 @@
         },
         methods: {
             xxx() {
-                this.eventBus.$emit('update:selected', this.name)
+                this.eventBus.$emit('update:selected', this.name, this)
             }
         }
     }
 </script>
 <style scoped lang="scss">
     $active-color: #4A90E2;
-    $font-family:PingFangSC-Regular;
+    $font-family: PingFangSC-Regular;
     .tabs-item {
         flex-shrink: 0;
         padding: 0 1em;
