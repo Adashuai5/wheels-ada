@@ -42,11 +42,18 @@
     }
 </script>
 <style scoped lang="scss">
+    $active-color: #4A90E2;
+    $font-family:PingFangSC-Regular;
     .tabs-item {
         flex-shrink: 0;
         padding: 0 1em;
+        height: 100%;
+        font-family: $font-family;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
         &.active {
-            color: red;;
+            color: $active-color;
         }
     }
 </style>
