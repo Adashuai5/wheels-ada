@@ -17,7 +17,7 @@
             autoClose: {
                 type: [Boolean, Number],
                 default: 5,
-                validator(value){
+                validator(value) {
                     return value === false || typeof value === 'number';
                 }
             },
