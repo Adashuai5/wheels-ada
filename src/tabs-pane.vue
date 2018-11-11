@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" :class="classes" v-if="active">
+    <div class="tabs-pane" :class="classes" v-if="active">
         <slot></slot>
     </div>
 </template>
@@ -15,7 +15,7 @@
         },
         data(){
             return{
-                active: true
+                active: false
             }
         },
         computed:{
@@ -33,7 +33,7 @@
     }
 </script>
 <style scoped lang="scss">
-    .tabs-item {
+    .tabs-pane {
         padding: 1em;
         &.active{
         }
