@@ -1,8 +1,8 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]: true}"
+    <button class="w-button" :class="{[`icon-${iconPosition}`]: true}"
             @click="$emit('click')">
-        <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
-        <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
+        <w-icon class="icon" v-if="icon && !loading" :name="icon"></w-icon>
+        <w-icon class="loading icon" v-if="loading" name="loading"></w-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -34,7 +34,7 @@
         100% {transform: rotate(360deg);}
     }
 
-    .g-button {font-size: var(--font-size);height: var(--button-height);padding: 0 1em;
+    .w-button {font-size: var(--font-size);height: var(--button-height);padding: 0 1em;
         border-radius: var(--button-radius);border: 1px solid var(--border-color);background: var(--button-bg);
         display: inline-flex;justify-content: center;align-items: center;vertical-align: middle;
         &:hover {border-color: var(--border-color-hover);}

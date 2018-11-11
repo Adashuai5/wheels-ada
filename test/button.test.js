@@ -5,7 +5,7 @@ import Icon from '../src/icon'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
-Vue.component('g-icon', Icon)
+Vue.component('w-icon', Icon)
 
 describe('Button', () => {
     it('存在.', () => {

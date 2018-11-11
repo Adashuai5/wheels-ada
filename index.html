@@ -50,33 +50,33 @@
 </head>
 <body>
 <div id="app">
-    <g-tabs :selected.sync="selectedTab">
-        <g-tabs-head>
+    <w-tabs :selected.sync="selectedTab">
+        <w-tabs-head>
             <template slot="actions">
         <button>set</button>
     </template>
-        <g-tabs-item name="woman" disabled>
-            <g-icon name="settings"></g-icon>美女
-        </g-tabs-item>
-        <g-tabs-item name="finance">
+        <w-tabs-item name="woman" disabled>
+            <w-icon name="settings"></w-icon>美女
+        </w-tabs-item>
+        <w-tabs-item name="finance">
             财经
-        </g-tabs-item>
-        <g-tabs-item name="sports">
+        </w-tabs-item>
+        <w-tabs-item name="sports">
             体育
-        </g-tabs-item>
-        </g-tabs-head>
-        <g-tabs-body>
-            <g-tabs-pane name="woman">
+        </w-tabs-item>
+        </w-tabs-head>
+        <w-tabs-body>
+            <w-tabs-pane name="woman">
                 美女对应新闻
-            </g-tabs-pane>
-            <g-tabs-pane name="sports">
+            </w-tabs-pane>
+            <w-tabs-pane name="sports">
                 体育对应新闻
-            </g-tabs-pane>
-            <g-tabs-pane name="finance">
+            </w-tabs-pane>
+            <w-tabs-pane name="finance">
                 财经对应新闻
-            </g-tabs-pane>
-        </g-tabs-body>
-    </g-tabs>
+            </w-tabs-pane>
+        </w-tabs-body>
+    </w-tabs>
 </div>
 <script src="./src/app.js"></script>
 </body>

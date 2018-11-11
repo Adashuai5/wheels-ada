@@ -18,24 +18,24 @@ import TabsBody from './tabs-body'
 import TabsItem from './tabs-item'
 import TabsPane from './tabs-pane'
 
-Vue.component('g-button', Button);
-Vue.component('g-icon', Icon);
-Vue.component('g-button-group', ButtonGroup);
-Vue.component('g-input', Input);
-Vue.component('g-row', Row);
-Vue.component('g-col', Col);
-Vue.component('g-layout', Layout)
-Vue.component('g-header', Header)
-Vue.component('g-content', Content)
-Vue.component('g-sider', Sider)
-Vue.component('g-footer', Footer)
-Vue.component('g-toast', Toast)
+Vue.component('w-button', Button);
+Vue.component('w-icon', Icon);
+Vue.component('w-button-group', ButtonGroup);
+Vue.component('w-input', Input);
+Vue.component('w-row', Row);
+Vue.component('w-col', Col);
+Vue.component('w-layout', Layout)
+Vue.component('w-header', Header)
+Vue.component('w-content', Content)
+Vue.component('w-sider', Sider)
+Vue.component('w-footer', Footer)
+Vue.component('w-toast', Toast)
 Vue.use(plugin)
-Vue.component('g-tabs', Tabs)
-Vue.component('g-tabs-head', TabsHead)
-Vue.component('g-tabs-body', TabsBody)
-Vue.component('g-tabs-item', TabsItem)
-Vue.component('g-tabs-pane', TabsPane)
+Vue.component('w-tabs', Tabs)
+Vue.component('w-tabs-head', TabsHead)
+Vue.component('w-tabs-body', TabsBody)
+Vue.component('w-tabs-item', TabsItem)
+Vue.component('w-tabs-pane', TabsPane)
 
 new Vue({
     el: '#app',

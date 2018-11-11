@@ -43,8 +43,8 @@
     export defalut {
         name: 'app',
         component: {
-            'g-button': Button,
-            'g-icon': Icon
+            'w-button': Button,
+            'w-icon': Icon
         }
     }
 
