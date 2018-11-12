@@ -24,10 +24,10 @@ describe('TabsTabsItem', () => {
             const Constructor = Vue.extend(TabsItem)
             const vm = new Constructor({
                 propsData: {
-                    name: 'xxx'
+                    name: 'onClick'
                 }
             }).$mount()
-            expect(vm.$el.getAttribute('data-name')).to.eq('xxx')
+            expect(vm.$el.getAttribute('data-name')).to.eq('onClick')
             vm.$el.remove()
             vm.$destroy()
         })
