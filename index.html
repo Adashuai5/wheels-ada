@@ -59,8 +59,9 @@
             <w-button>点我</w-button>
         </w-popover>
         <w-popover>
-            <template slot="content">
+            <template slot="content" slot-scope="{ close }">
                 <div>popover内容popover内容</div>
+                <w-button @click="close">关闭</w-button>
                 <div>popover内容popover内容</div>
             </template>
             <w-button>点我</w-button>
