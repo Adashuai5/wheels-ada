@@ -49,21 +49,40 @@
     </style>
 </head>
 <body>
-<div id="app" style="padding: 100px;">
-    <w-input v-model="value"></w-input>
+<div id="app">
     <div>
-        value: {{value}}
+        <w-tabs :selected="selected" direction="vertical">
+            <w-tabs-head>
+                <w-tabs-item name="1">1</w-tabs-item>
+                <w-tabs-item name="2">2</w-tabs-item>
+            </w-tabs-head>
+            <w-tabs-body>
+                <w-tabs-pane name="1">content 1</w-tabs-pane>
+                <w-tabs-pane name="2">content 2</w-tabs-pane>
+            </w-tabs-body>
+        </w-tabs>
     </div>
-    <w-button readonly>默认按钮</w-button>
-    <w-button icon="settings">默认按钮</w-button>
-    <w-button :loading="true">默认按钮</w-button>
-    <w-button disabled>默认按钮</w-button>
-    <w-collapse :selected.sync="selectedTab">
-        <w-collapse-item title="标题1" name="1">内容1</w-collapse-item>
-        <w-collapse-item title="标题2" name="2">内容2</w-collapse-item>
-        <w-collapse-item title="标题3" name="3">内容3</w-collapse-item>
-    </w-collapse>
-    {{selectedTab}}
+    <div>
+        <w-input v-model="value"></w-input>
+        <div>
+            value: {{value}}
+        </div>
+    </div>
+    <div>
+        <w-button readonly>默认按钮</w-button>
+        <w-button icon="settings">默认按钮</w-button>
+        <w-button :loading="true">默认按钮</w-button>
+        <w-button disabled>默认按钮</w-button>
+    </div>
+    <div style="padding: 100px;">
+        <w-collapse :selected.sync="selectedTab">
+            <w-collapse-item title="标题1" name="1">内容1</w-collapse-item>
+            <w-collapse-item title="标题2" name="2">内容2</w-collapse-item>
+            <w-collapse-item title="标题3" name="3">内容3</w-collapse-item>
+        </w-collapse>
+        {{selectedTab}}
+    </div>
+
 </div>
 <script src="./src/app.js"></script>
 </body>
