@@ -6,7 +6,9 @@
   "scripts": {
     "start": "npx parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
-    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
+    "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,8 @@
   "homepage": "https://github.com/Adashuai5/wheels#readme",
   "dependencies": {
     "parcel": "^1.10.1",
+    "sass-loader": "^7.1.0",
+    "svg": "^0.1.0",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.1"
   },
@@ -42,7 +46,8 @@
     "sass": "^1.14.1",
     "sinon": "^6.3.5",
     "sinon-chai": "^3.2.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "vuepress": "^0.14.5"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
