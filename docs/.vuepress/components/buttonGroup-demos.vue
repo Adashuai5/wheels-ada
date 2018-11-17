@@ -1,10 +1,9 @@
 <template>
     <div>
-        <w-button>默认按钮</w-button>
-        <w-button icon="settings">设置</w-button>
-        <w-button icon="thumbs-up">点赞</w-button>
-        <w-button icon="download" icon-position="right">下载</w-button>
-        <w-button :loading="true">登录中</w-button>
+        <w-button-group>
+            <w-button icon="left" icon-position="left">上一页</w-button>
+            <w-button icon="right" icon-position="right">下一页</w-button>
+        </w-button-group>
     </div>
 </template>
 

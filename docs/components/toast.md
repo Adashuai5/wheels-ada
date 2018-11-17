@@ -1,5 +1,5 @@
 ---
-title: Toast
+title: Toast - Toast
 ---
 # Toast
 
