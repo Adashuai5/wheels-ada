@@ -4,14 +4,8 @@ module.exports = {
     description: '一个易用的UI框架',
     themeConfig: {
         nav: [
-            {
-                text: '入门', items: [
-                    {text: 'Chinese', link: '/language/chinese'},
-                    {text: 'Japanese', link: '/language/japanese'}
-                ]
-            },
-            {text: 'Guide', link: '/guide/'},
-            {text: 'External', link: 'https://google.com'},
+            {text: 'Star', link: 'https://github.com/Adashuai5/wheels'},
+            {text: 'Github', link: 'https://github.com/Adashuai5'}
         ],
         sidebar: [
             {
