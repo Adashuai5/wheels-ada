@@ -3,7 +3,7 @@ title: Input - 输入框
 ---
 # 输入框
 
-## 使用方法
+### 常用例子
 
 #### 浏览
 #
@@ -12,12 +12,30 @@ title: Input - 输入框
 </ClientOnly>
 
 #### 代码
-#
+
 ``` html
-<w-button>默认按钮</w-button>
-<w-button icon="settings">设置</w-button>
-<w-button icon="thumbs-up">点赞</w-button>
-<w-button icon="download" icon-position="right">下载</w-button>
-<w-button :loading="true">登录中</w-button>
-<w-button disabled>不可点击</w-button>
+<w-input value="中文"></w-input>
+<w-input value="中文" readonly></w-input>
+<w-input value="中文" disabled></w-input>
+<w-input value="中文" error="错误"></w-input>
+```
+### 支持双向绑定
+
+#### 浏览
+#
+<ClientOnly>
+<input-model-demos></input-model-demos>
+</ClientOnly>
+
+#### 代码
+```
+data:{
+    value: '1'
+}
+```
+``` html
+<w-input v-model="value"></w-input>
+<div>
+    value: {{value}}
+</div>
 ```

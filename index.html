@@ -50,7 +50,11 @@
 </head>
 <body>
 <div id="app" style="padding: 100px;">
-    <w-button>默认按钮</w-button>
+    <w-input v-model="value"></w-input>
+    <div>
+        value: {{value}}
+    </div>
+    <w-button readonly>默认按钮</w-button>
     <w-button icon="settings">默认按钮</w-button>
     <w-button :loading="true">默认按钮</w-button>
     <w-button disabled>默认按钮</w-button>

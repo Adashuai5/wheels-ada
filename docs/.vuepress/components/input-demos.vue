@@ -1,9 +1,9 @@
 <template>
     <div>
-        <w-input>默认按钮</w-input>
-        <w-input icon="settings">默认按钮</w-input>
-        <w-input :loading="true">默认按钮</w-input>
-        <w-input disabled>默认按钮</w-input>
+        <w-input value="中文"></w-input>
+        <w-input value="中文" readOnly></w-input>
+        <w-input value="中文" disabled></w-input>
+        <w-input value="中文" error="错误"></w-input>
     </div>
 </template>
 

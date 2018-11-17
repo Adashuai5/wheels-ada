@@ -1,6 +1,6 @@
 <template>
     <div class="message" :class="{error}">
-        <input type="test" :value="value" :disabled="disabled" :readonly="readOnly"
+        <input type="text" :value="value" :disabled="disabled" :readonly="readOnly"
                @change="$emit('change', $event.target.value)"
                @input="$emit('input', $event.target.value)"
                @focus="$emit('focus', $event.target.value)"
@@ -51,10 +51,12 @@
             &:hover {border-color: $border-color-hover;}
             &:focus {outline: none;box-shadow: inset 0 1px 3px $box-shadow-color;}
             &[disabled], &[readOnly] {border-color: #bbb;color: #bbb;cursor: not-allowed;}
+            &[disabled]{background-color: #EBEBE4;}
         }
         &.error {
             > input {
                 border: 1px solid $red;
+                color: $red;
                 &:focus {outline: none;box-shadow: inset 0 1px 3px $red;}
             }
         }
