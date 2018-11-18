@@ -65,8 +65,7 @@ new Vue({
         showToast(position) {
             this.$toast(`更新成功,第${parseInt(Math.random() * 100)}号按钮`, {
                 enableHTML: false,
-                autoClose: false,
-                position
+                autoClose: false
             })
         }
     }

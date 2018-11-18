@@ -1,5 +1,5 @@
 <template>
-    <div class="collapse">
+    <div class="w-collapse">
         <slot></slot>
     </div>
 </template>
@@ -54,7 +54,7 @@
 <style scoped lang="scss">
     $border-color: #ddd;
     $border-radius: 4px;
-    .collapse {
+    .w-collapse {
         border: 1px solid $border-color;
         border-radius: $border-radius;
     }

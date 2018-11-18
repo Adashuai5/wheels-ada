@@ -1,9 +1,9 @@
 <template>
-    <div class="collapse-item">
-        <div class="title" @click="toggle">
+    <div class="w-collapse-item">
+        <div class="w-title" @click="toggle">
             {{title}}
         </div>
-        <div class="content" v-if="open">
+        <div class="w-content" v-if="open">
             <slot></slot>
         </div>
     </div>
@@ -52,8 +52,9 @@
 <style scoped lang="scss">
     $border-color: #ddd;
     $border-radius: 4px;
-    .collapse-item {
-        > .title {
+    .w-collapse-item {
+        > .w-title {
+            background: lightskyblue;
             border: 1px solid $border-color;
             margin: -1px;
             line-height: 32px;
@@ -62,18 +63,18 @@
             align-items: center;
         }
         &:first-child {
-            .title {
+            .w-title {
                 border-top-left-radius: $border-radius;
                 border-top-right-radius: $border-radius;
             }
         }
         &:last-child {
-            > .title:last-child {
+            > .w-title:last-child {
                 border-bottom-left-radius: $border-radius;
                 border-bottom-right-radius: $border-radius;
             }
         }
-        > .content {
+        > .w-content {
             padding: 8px;
         }
     }
