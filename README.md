@@ -15,7 +15,7 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
 1. 添加 CSS 样式
     使用本框架前，请在 CSS 中开启 border-box
     ```
-    *，*::before,*::after{box-sizing:border-box}
+    *，*::before,*::after{ box-sizing: border-box }
     ```
     IE 8 及以上浏览器支持此样式。
 
@@ -41,7 +41,7 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
     ```
 3. 引入 wheels
     ```
-    import {Button, ButtonGroup, Icon} from 'wheels-ada'
+    import { Button, ButtonGroup, Icon } from 'wheels-ada'
     import 'wheels-ada/dist/index.css'
 
     export defalut {
