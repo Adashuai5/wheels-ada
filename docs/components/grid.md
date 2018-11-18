@@ -3,15 +3,13 @@ title: Grid 网格
 ---
 # 网格
 Grid - 网格，最多可分为24小格，可设置 gutter 和空白，默认支持响应式布局
-
 :::tip
 使用该组件推荐设置，示例已设置
 :::
 ```CSS
 * { box-sizing: border-box; }
 ```
-
-### 使用方法
+## 使用方法
 
 #### 浏览
 #
@@ -57,7 +55,7 @@ Grid - 网格，最多可分为24小格，可设置 gutter 和空白，默认支
 </w-row>
 </div>
 ```
-### 设置 gutter
+## 设置 gutter
    
 #### 浏览
 #
@@ -79,7 +77,7 @@ Grid - 网格，最多可分为24小格，可设置 gutter 和空白，默认支
     <w-col span="6"><div class="demoCol">6</div></w-col>
 </w-row>
 ```
-### 设置空白
+## 设置空白
    
 #### 浏览
 #

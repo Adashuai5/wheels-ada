@@ -6,7 +6,7 @@ title: Button 按钮
 
 提供单个按钮和组合形式的按钮，按钮可以添加图标，设置图标位置等。。。
 
-### 单个按钮 
+## 单个按钮 
 
 #### 浏览
 #
@@ -23,8 +23,7 @@ title: Button 按钮
 <w-button icon="download" icon-position="right">下载</w-button>
 <w-button :loading="true">登录中</w-button>
 ```
-
-### 按钮组合
+## 按钮组合
 
 #### 浏览
 #

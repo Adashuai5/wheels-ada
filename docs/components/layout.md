@@ -3,7 +3,7 @@ title: Layout 布局
 ---
 # 布局
 
-### 简单布局
+## 简单布局
 
 #### 浏览
 #
@@ -25,7 +25,7 @@ title: Layout 布局
     </w-footer>
 </w-layout>
 ```
-### 内侧边栏
+## 内侧边栏
 
 侧边栏可关闭哦
 #### 浏览
@@ -53,7 +53,8 @@ title: Layout 布局
     </w-footer>
 </w-layout>
 ```
-### 外侧边栏
+## 外侧边栏
+
 #### 浏览
 #
 <ClientOnly>

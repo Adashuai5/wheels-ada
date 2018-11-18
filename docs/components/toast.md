@@ -10,7 +10,7 @@ title: Toast
     z-index: 30;
 }
 ```
-### 设置弹出位置
+## 设置弹出位置
 
 #### 浏览
 #
@@ -27,7 +27,7 @@ title: Toast
     <w-button @click="$toast('点击弹出提示', {position:'bottom'})">底部弹出</w-button>
 </div>
 ```
-### 自动或手动关闭
+## 自动或手动关闭
 
 #### 浏览
 #
@@ -54,7 +54,7 @@ methods: {
 :::tip
 autoClsoe 取值为 false（手动关闭）或数字（几秒后自动关闭，默认为5）
 :::
-### 设置关闭按钮
+## 设置关闭按钮
 
 #### 浏览
 #
@@ -83,7 +83,7 @@ methods: {
     <w-button @click="onClickButton">顶部弹出</w-button>
 </div>
 ```
-### 支持 HTML
+## 支持 HTML
 
 #### 浏览
 #

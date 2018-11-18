@@ -3,7 +3,7 @@ title: Input 输入框
 ---
 # 输入框
 
-### 常用例子
+## 常用例子
 
 #### 浏览
 #
@@ -19,7 +19,7 @@ title: Input 输入框
 <w-input value="中文" disabled></w-input>
 <w-input value="中文" error="错误"></w-input>
 ```
-### 支持双向绑定
+## 支持双向绑定
 
 #### 浏览
 #

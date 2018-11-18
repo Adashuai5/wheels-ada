@@ -5,7 +5,7 @@ title: Popover 弹出层
 :::tip
 popover 弹出层内容支持 html
 :::
-### 点击
+## 点击
 
 #### 浏览
 #
@@ -33,7 +33,7 @@ popover 弹出层内容支持 html
     <template slot="content"> 弹出内容</template>
 </w-popover>
 ```
-### hover
+## hover
 
 #### 浏览
 #

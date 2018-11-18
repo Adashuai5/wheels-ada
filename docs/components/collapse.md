@@ -3,7 +3,7 @@ title: Collapse 手风琴
 ---
 # 手风琴
 
-### 设置默认开启
+## 设置默认开启
 
 #### 浏览
 #
@@ -27,7 +27,7 @@ data() {
     <w-collapse-item title="标题3" name="3">内容3</w-collapse-item>
 </w-collapse>
 ```
-### 设定 single
+## 设定 single
 
 #### 浏览
 #
