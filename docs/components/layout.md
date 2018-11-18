@@ -1,5 +1,5 @@
 ---
-title: Layout - 布局
+title: Layout 布局
 ---
 # 布局
 
@@ -26,6 +26,8 @@ title: Layout - 布局
 </w-layout>
 ```
 ### 内侧边栏
+
+侧边栏可关闭哦
 #### 浏览
 #
 <ClientOnly>

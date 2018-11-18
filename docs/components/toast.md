@@ -1,8 +1,10 @@
 ---
-title: Toast - Toast
+title: Toast
 ---
 # Toast
+:::tip
 若点击按钮无显示，需要设置
+:::
 ``` CSS
 .w-toast {
     z-index: 30;
@@ -34,8 +36,8 @@ title: Toast - Toast
 </ClientOnly>
 
 #### 代码
-autoClsoe 取值为 false（手动关闭）或数字（几秒后自动关闭，默认为5）
-``` js
+
+``` js{4}
 methods: {
     onClickButton () {
         this.$toast('我不会自动关闭', {
@@ -49,6 +51,9 @@ methods: {
     <w-button @click="onClickButton">顶部弹出</w-button>
 </div>
 ```
+:::tip
+autoClsoe 取值为 false（手动关闭）或数字（几秒后自动关闭，默认为5）
+:::
 ### 设置关闭按钮
 
 #### 浏览

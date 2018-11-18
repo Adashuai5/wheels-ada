@@ -1,6 +1,6 @@
 {
-  "name": "adashuai5",
-  "version": "0.0.1",
+  "name": "wheels-ada",
+  "version": "0.1.0",
   "description": "这是一个 UI 框架",
   "main": "dist/index.js",
   "scripts": {

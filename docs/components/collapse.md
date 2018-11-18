@@ -1,5 +1,5 @@
 ---
-title: Collapse - 手风琴
+title: Collapse 手风琴
 ---
 # 手风琴
 
@@ -50,3 +50,6 @@ data() {
     <w-collapse-item title="标题3" name="3">内容3</w-collapse-item>
 </w-collapse>
 ```
+::: tip
+设定 single 同时建议 selectedTab 也为单个
+:::
