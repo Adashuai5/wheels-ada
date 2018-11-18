@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper" :class="toastClasses">
+    <div class="w-toast" :class="toastClasses">
         <div class="toast" ref="toast">
             <div class="message">
                 <slot v-if="!enableHTML"></slot>
@@ -103,7 +103,7 @@
         100% {opacity: 1; transform: translateY(0%)}
     }
 
-    .wrapper {
+    .w-toast {
         left: 50%;
         position: fixed;
         transform: translateX(-50%);
@@ -149,6 +149,7 @@
         .close {
             padding-left: 16px;
             flex-shrink: 0;
+            cursor: default;
         }
         .line {
             border-left: 1px solid #d4d4d4;

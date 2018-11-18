@@ -51,7 +51,9 @@
 <body>
 <div id="app">
     <div>
-
+        <w-button @click="$toast('点击弹出提示')">顶部弹出</w-button>
+        <w-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</w-button>
+        <w-button @click="$toast('点击弹出提示', {position:'bottom'})">底部弹出</w-button>
     </div>
     <div>
         <w-tabs :selected="selected" direction="vertical">
