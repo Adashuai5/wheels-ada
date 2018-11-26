@@ -1,4 +1,4 @@
-# wheels-ada: 用 Vue 写一个 UI 组件库
+# Wheels-ada: 用 Vue 写一个 UI 组件库
 
 [![Build Status](https://travis-ci.org/Adashuai5/wheels.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 
@@ -19,17 +19,17 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
     ```
     IE 8 及以上浏览器支持此样式。
 
-    你还需要设置默认颜色等变量（后续会改为 SCSS 变量）
+    你还需要设置默认颜色等变量（需要引入 SCSS ）
     ```
     :root {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --button-active-bg: #eee;
-        --button-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
+        $button-height: 32px;
+        $font-size: 14px;
+        $button-bg: white;
+        $button-active-bg: #eee;
+        $button-radius: 4px;
+        $color: #333;
+        $border-color: #999;
+        $border-color-hover: #666;
     }
     ```
     IE 15 及以上浏览器支持此样式。
@@ -37,7 +37,11 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
 2. 安装 wheels
 
     ```
-    npm i --save adashuai5
+    npm install -g wheels-ada
+    ```
+    或者
+    ```
+    yarn global add wheels-ada
     ```
 3. 引入 wheels
     ```
