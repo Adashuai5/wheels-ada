@@ -1,6 +1,6 @@
 # Wheels-ada: 用 Vue 写一个 UI 组件库
 
-[![Build Status](https://travis-ci.org/Adashuai5/wheels.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 
 Wheels-ada UI 是一个好用的 UI 框架，提供了一些常用组件，适合 PC 端和移动端使用。
 
@@ -34,7 +34,7 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
     ```
     IE 15 及以上浏览器支持此样式。
 
-2. 安装 wheels
+2. 安装 wheels-ada
 
     ```
     npm install -g wheels-ada
@@ -43,7 +43,7 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
     ```
     yarn global add wheels-ada
     ```
-3. 引入 wheels
+3. 引入 wheels-ada
     ```
     import { Button, ButtonGroup, Icon } from 'wheels-ada'
     import 'wheels-ada/dist/index.css'
@@ -58,11 +58,11 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
 
 ## 文档
 
-[官方文档](https://adashuai5.github.io/wheels/)
+[官方文档](https://adashuai5.github.io/wheels-ada/)
 
 ## 提问
 
-[Issues](https://github.com/Adashuai5/wheels/issues)
+[Issues](https://github.com/Adashuai5/wheels-ada/issues)
 
 ## 联系方式
 
@@ -70,7 +70,7 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
 
 ## 贡献代码
 
-[Pull request](https://github.com/Adashuai5/wheels/pulls)
+[Pull request](https://github.com/Adashuai5/wheels-ada/pulls)
 
 
 

@@ -1,11 +1,11 @@
 module.exports = {
-    base:'/wheels/',
+    base:'/wheels-ada/',
     title: 'Wheels-ada',
     description: '一个易用的UI框架',
     themeConfig: {
         nav: [
             {text: '主页', link: '/'},
-            {text: '欢迎 Star', link: 'https://github.com/Adashuai5/wheels'},
+            {text: '欢迎 Star', link: 'https://github.com/Adashuai5/wheels-ada'},
             {text: 'Github', link: 'https://github.com/Adashuai5'}
         ],
         sidebar: [
