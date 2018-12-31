@@ -10,6 +10,13 @@ module.exports = {
         ],
         sidebar: [
             {
+                title: '介绍',
+                collapsable: false,
+                children: [
+                    '/introduce/',
+                ]
+            },
+            {
                 title: '入门',
                 collapsable: false,
                 children: [
