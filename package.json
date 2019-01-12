@@ -1,6 +1,6 @@
 {
   "name": "wheels-ada",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "这是一个 UI 框架",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "keywords": [
     "vue，ui"
   ],
-  "author": "Zhouyuan Da",
+  "author": "Zhou Yuanda",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Adashuai5/wheels/issues"
@@ -28,7 +28,8 @@
     "sass-loader": "^7.1.0",
     "svg": "^0.1.0",
     "vue": "^2.5.17",
-    "vue-hot-reload-api": "^2.3.1"
+    "vue-hot-reload-api": "^2.3.1",
+    "vue-server-renderer": "^2.5.17"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",

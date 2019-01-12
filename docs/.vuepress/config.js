@@ -5,8 +5,8 @@ module.exports = {
     themeConfig: {
         nav: [
             {text: '主页', link: '/'},
-            {text: '欢迎 Star', link: 'https://github.com/Adashuai5/wheels-ada'},
-            {text: 'Github', link: 'https://github.com/Adashuai5'}
+            {text: '欢迎 Star', link: 'https://github.com/Adashuai5/wheels-ada/'},
+            {text: 'Github', link: 'https://github.com/Adashuai5/'}
         ],
         sidebar: [
             {

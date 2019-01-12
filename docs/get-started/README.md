@@ -14,14 +14,13 @@ IE 8 及以上浏览器支持此样式。
 ## 引入 wheels-ada
 
 ``` js
-import { Button, ButtonGroup, Icon } from 'wheels-ada'
+import { Button } from 'wheels-ada'
 import 'wheels-ada/dist/index.css'
 
-export defalut {
+export default {
     name: 'app',
     component: {
-        'w-button': Button,
-        'w-icon': Icon
+        'w-button': Button
     }
 }
 ```

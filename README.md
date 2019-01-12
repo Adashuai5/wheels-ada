@@ -19,40 +19,24 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
     ```
     IE 8 及以上浏览器支持此样式。
 
-    你还需要设置默认颜色等变量（需要引入 SCSS ）
-    ```
-    :root {
-        $button-height: 32px;
-        $font-size: 14px;
-        $button-bg: white;
-        $button-active-bg: #eee;
-        $button-radius: 4px;
-        $color: #333;
-        $border-color: #999;
-        $border-color-hover: #666;
-    }
-    ```
-    IE 15 及以上浏览器支持此样式。
-
 2. 安装 wheels-ada
 
     ```
-    npm install -g wheels-ada
+    npm install wheels-ada
     ```
     或者
     ```
-    yarn global add wheels-ada
+    yarn add wheels-ada
     ```
 3. 引入 wheels-ada
     ```
-    import { Button, ButtonGroup, Icon } from 'wheels-ada'
+    import { Button } from 'wheels-ada'
     import 'wheels-ada/dist/index.css'
 
-    export defalut {
+    export default {
         name: 'app',
         component: {
-            'w-button': Button,
-            'w-icon': Icon
+            'w-button': Button
         }
     }
 
