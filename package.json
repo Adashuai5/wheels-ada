@@ -1,6 +1,6 @@
 {
   "name": "wheels-ada",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "这是一个 UI 框架",
   "main": "dist/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   "keywords": [
     "vue，ui"
   ],
-  "author": "Zhoyuan Da",
+  "author": "Zhouyuan Da",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Adashuai5/wheels/issues"
