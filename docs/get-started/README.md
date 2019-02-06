@@ -19,7 +19,7 @@ import 'wheels-ada/dist/index.css'
 
 export default {
     name: 'app',
-    component: {
+    components: {
         'w-button': Button
     }
 }

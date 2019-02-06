@@ -35,7 +35,7 @@ Wheels 就是轮子，这是我在学习 Vue 的过程中尝试写的一个 UI �
 
     export default {
         name: 'app',
-        component: {
+        components: {
             'w-button': Button
         }
     }
