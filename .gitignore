@@ -4,3 +4,4 @@ dist/
 .cache/
 /%APPDATA%/
 *.log/
+package-lock.json
