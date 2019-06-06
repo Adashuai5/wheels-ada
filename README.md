@@ -1,6 +1,23 @@
-# Wheels-ada: 用 Vue 写一个 UI 组件库
+<p align="center">
+  <a href="https://adashuai5.github.io/wheels-ada/">
+    <img width="200" src="https://adashuai5.github.io/wheels-ada/ada.png">
+  </a>
+</p>
+
+<h1 align="center">
+  <a href="https://adashuai5.github.io/wheels-ada/" target="_blank">Wheels-ada</a>
+</h1>
+
+<div align="center">
+
+An easy UI components based on Vue.
 
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![npm package](https://img.shields.io/npm/v/wheels-ada.svg?style=flat-square)](https://www.npmjs.com/package/wheels-ada)
+![](https://img.shields.io/badge/language-JavaScript-yellow.svg)
+![](https://img.shields.io/badge/license-MIT-000000.svg)
+    
+</div>
 
 Wheels-ada UI 是一个好用的 UI 框架，提供了一些常用组件，适合 PC 端和移动端使用。
 
