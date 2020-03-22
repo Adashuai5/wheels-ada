@@ -1,20 +1,20 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js upgrade serialize-javascript
+  F:\ada\node\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js install
 
 PATH: 
-  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ada\bin;C:\Users\ada\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ada\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\ada\AppData\Local\Microsoft\WindowsApps;C:\Users\ada\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ada\AppData\Roaming\npm;C:\Users\ada\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;C:\GnuWin32\bin;C:\users\ada;C:\GnuWin32\bin\;C:\users\ada
+  F:\ada\cmder\bin;F:\ada\cmder\vendor\bin;F:\ada\cmder\vendor\conemu-maximus5\ConEmu\Scripts;F:\ada\cmder\vendor\conemu-maximus5;F:\ada\cmder\vendor\conemu-maximus5\ConEmu;C:\ProgramData\Oracle\Java\javapath;D:\jdee\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Yarn\bin\;F:\ada\Microsoft VS Code\bin;F:\ada\flutter\flutter\bin;F:\ada\node\;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Administrator\.windows-build-tools\python27\;C:\Users\Administrator\AppData\Local\Yarn\bin;C:\Users\Administrator\AppData\Roaming\npm;F:\ada\cmder\bin;F:\ada\Docker Toolbox;F:\ada\cmder;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;F:\ada\cmder
 
 Yarn version: 
-  1.15.2
+  1.9.4
 
 Node version: 
-  10.15.3
+  12.9.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\ada\Desktop\wheels-ada\node_modules\node-sass\vendor\win32-x64-64\binding.node'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Administrator\Desktop\ada\code\wheels-ada\node_modules\deasync\bin\win32-x64-node-12\deasync.node'
 
 npm manifest: 
   {
