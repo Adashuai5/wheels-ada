@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-- "8"
+  - "12"
 addons:
   chrome: stable
-env:  
+env:
   global:
     - CODECOV_TOKEN: 95de95eb-0b5d-4a85-9aef-54bfc477fde7
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
