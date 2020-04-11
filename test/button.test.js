@@ -35,6 +35,40 @@ describe('Button', () => {
         expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading')
         vm.$destroy()
     })
+    it('接收 round 属性', () => {
+        const Constructor = Vue.extend(Button)
+        const vm = new Constructor({
+            propsData: {
+                round: true
+            }
+        }).$mount()
+        expect(vm.$el.classList.contains('is-round')).to.equal(true)
+        vm.$destroy()
+    })
+    it('接收 border 属性', () => {
+        const Constructor = Vue.extend(Button)
+        const vm = new Constructor({
+            propsData: {
+                border: true
+            }
+        }).$mount()
+        expect(vm.$el.classList.contains('border-primary')).to.equal(true)
+        vm.$destroy()
+    })
+    it('可以设置 border,type', () => {
+        const Constructor = Vue.extend(Button)
+        const vm = new Constructor({
+            propsData: {
+                icon: 'settings',
+                type:"success",
+                border: true
+            }
+        }).$mount()
+        const useElements = vm.$el.querySelectorAll('use')
+        expect(useElements.length).to.equal(1)
+        expect(useElements[0].className.animVal).to.equal('color-success')
+        vm.$destroy()
+    })
     it('icon 默认的 order 是 1', () => {
         const div = document.createElement('div')
         document.body.appendChild(div)

@@ -1,24 +1,13 @@
 <template>
   <button
-    class="w-button material-design"
-    :class="{[`icon-${iconPosition}`]: true,[`color-${type}`]: !border,[`border-${type}`]: border,'btn-round': round}"
+    class="w-button"
+    :class="{[`icon-${iconPosition}`]: true,[`color-${type}`]: !border,[`border-${type}`]: border,'is-round': round}"
     @click="$emit('click')"
     :data-color="dataSetColor[type]"
   >
-    <w-icon
-      class="icon"
-      v-if="icon && !loading"
-      :name="icon"
-      :fill="type"
-      :border="border"
-    ></w-icon>
-    <w-icon
-      class="loading icon"
-      v-if="loading"
-      name="loading"
-      :fill="type"
-      :border="border"
-    ></w-icon>
+    <canvas @click="press" class="w-button-canvas"></canvas>
+    <w-icon class="icon" v-if="icon && !loading" :name="icon" :fill="type" :border="border"></w-icon>
+    <w-icon class="loading icon" v-if="loading" name="loading" :fill="type" :border="border"></w-icon>
     <div class="w-button-content">
       <slot></slot>
     </div>
@@ -75,45 +64,47 @@ export default {
         warning: "#f34711",
         danger: "#d2181c"
       },
-      insideCanvas: {
-        centerX: 0,
-        centerY: 0,
-        color: "",
-        context: "",
-        radius: 0,
-        element: ""
-      }
+      clickedEvent: {},
+      clickedElement: {},
+      insideRadius: 0
     };
   },
   methods: {
     press(event) {
-      this.insideCanvas.color = event.toElement.parentElement.dataset.color;
-      this.insideCanvas.element = event.toElement;
-      this.insideCanvas.context = this.insideCanvas.element.getContext("2d");
-      this.insideCanvas.radius = 0;
-      this.insideCanvas.centerX = event.offsetX;
-      this.insideCanvas.centerY = event.offsetY;
-      this.insideCanvas.context.clearRect(
-        0,
-        0,
-        this.insideCanvas.element.width,
-        this.insideCanvas.element.height
-      );
+      this.clickedEvent = event;
+      this.clickedElement = event.toElement;
+      this.insideRadius = 0;
       this.draw();
     },
+    clearRect() {
+      const canvass = document.getElementsByClassName("w-button-canvas");
+      for (let i = 0; i < canvass.length; i++) {
+        const context = canvass[i].getContext("2d");
+        if (context.fillStyle !== "#000000") {
+          context.clearRect(
+            0,
+            0,
+            this.clickedElement.width,
+            this.clickedElement.height
+          );
+        }
+      }
+    },
     draw() {
-      this.insideCanvas.context.beginPath();
-      this.insideCanvas.context.arc(
-        this.insideCanvas.centerX,
-        this.insideCanvas.centerY,
-        this.insideCanvas.radius,
+      this.clearRect();
+      const context = this.clickedElement.getContext("2d");
+      context.beginPath();
+      context.arc(
+        this.clickedEvent.offsetX,
+        this.clickedEvent.offsetY,
+        this.insideRadius,
         0,
         2 * Math.PI,
         false
       );
-      this.insideCanvas.context.fillStyle = this.insideCanvas.color;
-      this.insideCanvas.context.fill();
-      this.insideCanvas.radius += 2;
+      context.fillStyle = this.clickedElement.parentElement.dataset.color;
+      context.fill();
+      this.insideRadius += 3;
       const requestAnimFrame = (function() {
         return (
           window.requestAnimationFrame ||
@@ -125,25 +116,12 @@ export default {
           }
         );
       })();
-      if (this.insideCanvas.radius < this.insideCanvas.element.width) {
+      if (this.insideRadius < this.clickedElement.width) {
         requestAnimFrame(this.draw);
       }
     }
   },
-  mounted() {
-    let canvas = {};
-    let containers = document.getElementsByClassName("material-design");
-    containers = Array.prototype.slice.call(containers);
-    for (var i = 0; i < containers.length; i += 1) {
-      canvas = document.createElement("canvas");
-      canvas.addEventListener("click", this.press, false);
-      containers[i].appendChild(canvas);
-      canvas.style.width = "100%";
-      canvas.style.height = "100%";
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    }
-  }
+  mounted() {}
 };
 </script>
 <style lang="scss">
@@ -185,6 +163,13 @@ $data-danger: #d2181c;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+  position: relative;
+  canvas {
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   .w-button-content {
     line-height: 1em;
   }
@@ -254,17 +239,7 @@ $data-danger: #d2181c;
   border: 2px solid $color-danger;
   color: $color-danger;
 }
-.btn-round {
+.is-round {
   border-radius: 10em;
-}
-.material-design {
-  position: relative;
-
-  canvas {
-    opacity: 0.25;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
 }
 </style>

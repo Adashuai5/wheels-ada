@@ -1,6 +1,6 @@
 <template>
   <svg class="w-icon">
-    <use :xlink:href="`#i-${name}`" :class="{'color-default':true,[`color-${fill}`]: border}" />
+    <use :xlink:href="`#i-${name}`" :class="{'color-default':!border,[`color-${fill}`]: border}" />
   </svg>
 </template>
 <script>
