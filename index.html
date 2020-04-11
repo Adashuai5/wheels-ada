@@ -1,94 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hans">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>轮子</title>
     <style>
-        * {margin: 0;padding: 0;box-sizing: border-box}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        *::before, *::after {box-sizing: border-box}
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-        :root {--button-height: 32px;--font-size: 14px;--button-bg: white;--button-active-bg: #eee;
-            --button-radius: 4px;--color: #333;--border-color: #999;--border-color-hover: #666;}
+      :root {
+        --button-height: 32px;
+        --font-size: 14px;
+        --button-bg: white;
+        --button-active-bg: #eee;
+        --button-radius: 4px;
+        --color: #333;
+        --border-color: #999;
+        --border-color-hover: #666;
+      }
 
-        #app {}
+      #app {
+      }
 
-        body {font-size: var(--font-size);}
+      body {
+        font-size: var(--font-size);
+        font-family: "Open Sans";
+        font-weight: 300;
+        line-height: 1.5em;
+        text-align: center;
+      }
     </style>
     <style>
-        .demo {
-            border: 1px solid #666;
-            min-height: 100px;
-        }
+      .demo {
+        border: 1px solid #666;
+        min-height: 100px;
+      }
 
-        .sider {
-            background: #333;
-            width: 200px;
-        }
+      .sider {
+        background: #333;
+        width: 200px;
+      }
 
-        .side-enter-active, .side-leave-active {
-            transition: all .5s;
-        }
+      .side-enter-active,
+      .side-leave-active {
+        transition: all 0.5s;
+      }
 
-        .side-enter, .side-leave-to {
-            margin-left: -150px;
-        }
+      .side-enter,
+      .side-leave-to {
+        margin-left: -150px;
+      }
 
-        .header {
-            background: #999;
-            height: 100px;
-        }
+      .header {
+        background: #999;
+        height: 100px;
+      }
 
-        .footer {
-            background: #ccc;
-            height: 50px;
-        }
+      .footer {
+        background: #ccc;
+        height: 50px;
+      }
     </style>
-</head>
-<body>
-<div id="app">
-    <div>
+  </head>
+  <body>
+    <div id="app">
+      <div>
         <w-button @click="$toast('点击弹出提示')">顶部弹出</w-button>
-        <w-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</w-button>
-        <w-button @click="$toast('点击弹出提示', {position:'bottom'})">底部弹出</w-button>
-    </div>
-    <div>
+        <w-button @click="$toast('点击弹出提示', {position:'middle'})"
+          >中间弹出</w-button
+        >
+        <w-button @click="$toast('点击弹出提示', {position:'bottom'})"
+          >底部弹出</w-button
+        >
+      </div>
+      <div>
         <w-tabs :selected="selected" direction="vertical">
-            <w-tabs-head>
-                <w-tabs-item name="1">1</w-tabs-item>
-                <w-tabs-item name="2">2</w-tabs-item>
-            </w-tabs-head>
-            <w-tabs-body>
-                <w-tabs-pane name="1">content 1</w-tabs-pane>
-                <w-tabs-pane name="2">content 2</w-tabs-pane>
-            </w-tabs-body>
+          <w-tabs-head>
+            <w-tabs-item name="1">1</w-tabs-item>
+            <w-tabs-item name="2">2</w-tabs-item>
+          </w-tabs-head>
+          <w-tabs-body>
+            <w-tabs-pane name="1">content 1</w-tabs-pane>
+            <w-tabs-pane name="2">content 2</w-tabs-pane>
+          </w-tabs-body>
         </w-tabs>
-    </div>
-    <div>
+      </div>
+      <div>
         <w-input v-model="value"></w-input>
         <div>
-            value: {{value}}
+          value: {{value}}
         </div>
-    </div>
-    <div>
+      </div>
+      <div class="container">
         <w-button readonly>默认按钮</w-button>
+        <w-button readonly :border="true">默认按钮</w-button>
         <w-button icon="settings">默认按钮</w-button>
         <w-button :loading="true">默认按钮</w-button>
         <w-button disabled>默认按钮</w-button>
-    </div>
-    <div style="padding: 100px;">
+      </div>
+      <div style="padding: 100px;">
         <w-collapse :selected.sync="selectedTab">
-            <w-collapse-item title="标题1" name="1">内容1</w-collapse-item>
-            <w-collapse-item title="标题2" name="2">内容2</w-collapse-item>
-            <w-collapse-item title="标题3" name="3">内容3</w-collapse-item>
+          <w-collapse-item title="标题1" name="1">内容1</w-collapse-item>
+          <w-collapse-item title="标题2" name="2">内容2</w-collapse-item>
+          <w-collapse-item title="标题3" name="3">内容3</w-collapse-item>
         </w-collapse>
         {{selectedTab}}
+      </div>
     </div>
-
-</div>
-<script src="./src/app.js"></script>
-</body>
+    <script src="./src/app.js"></script>
+  </body>
 </html>
