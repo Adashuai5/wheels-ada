@@ -18,6 +18,7 @@ export default {
           if (canvas && canvas.getContext("2d")) {
             const context = canvas.getContext("2d");
             context.fillStyle = canvas.parentElement.dataset.color;
+            console.log(context.fillStyle);
             context.beginPath();
             context.arc(0, 0, 300, 0, 2 * Math.PI, false);
             context.fill();
