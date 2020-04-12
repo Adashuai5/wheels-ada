@@ -1,12 +1,17 @@
 <template>
-  <div class="tabs-item" @click="onClick" :class="classes" :data-name="name">
+  <div class="tabs-item" @click="onClick" :class="classes" :data-name="name" data-color="#426FC5">
+    <w-canvas :drawed="active"></w-canvas>
     <slot></slot>
   </div>
 </template>
 <script>
+import Canvas from "./canvas";
 export default {
   name: "WheelsTabsItem",
   inject: ["eventBus"],
+  components: {
+    "w-canvas": Canvas
+  },
   data() {
     return {
       active: false
@@ -18,7 +23,7 @@ export default {
       default: false
     },
     name: {
-      type: String | Number,
+      type: [String, Number],
       required: true
     }
   },
@@ -59,6 +64,8 @@ $disabled-text-color: gray;
   font-family: $font-family;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
   &.active {
     color: $active-color;

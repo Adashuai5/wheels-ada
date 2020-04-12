@@ -53,9 +53,7 @@
 
 <style scoped lang="scss">
     $border-color: #ddd;
-    $border-radius: 4px;
     .w-collapse {
-        border: 1px solid $border-color;
-        border-radius: $border-radius;
+        border: 2px solid $border-color;
     }
 </style>

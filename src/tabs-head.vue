@@ -43,7 +43,7 @@ $border-color: #ddd;
   border-bottom: 2px solid $border-color;
   > .line {
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     border-bottom: 2px solid $color;
     transition: all 300ms;
   }

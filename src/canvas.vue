@@ -1,9 +1,32 @@
 <template>
-  <canvas @click="press" class="w-canvas"></canvas>
+  <canvas ref="wCanvas" @click="press" class="w-canvas"></canvas>
 </template>
 <script>
 export default {
   name: "WheelsCanvas",
+  props: {
+    drawed: {
+      type: Boolean,
+      default: false
+    }
+  },
+  watch: {
+    drawed: {
+      handler(val) {
+        if (val) {
+          const canvas = this.$refs.wCanvas;
+          if (canvas && canvas.getContext("2d")) {
+            const context = canvas.getContext("2d");
+            context.fillStyle = canvas.parentElement.dataset.color;
+            context.beginPath();
+            context.arc(0, 0, 300, 0, 2 * Math.PI, false);
+            context.fill();
+          }
+        }
+      },
+      immediate: true
+    }
+  },
   data() {
     return {
       clickedEvent: {},

@@ -4,12 +4,8 @@
   </div>
 </template>
 <script>
-import Icon from "./icon";
 export default {
   name: "WheelsButtonGroup",
-  components: {
-    "w-icon": Icon
-  },
   mounted() {
     for (let node of this.$el.children) {
       let name = node.nodeName.toLowerCase();

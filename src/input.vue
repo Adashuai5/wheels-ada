@@ -11,7 +11,7 @@
       @blur="$emit('blur', $event.target.value)"
     />
     <template v-if="error">
-      <icon name="error" class="icon-error"></icon>
+      <icon name="error" fill="danger" border></icon>
       <span class="error-message">{{error}}</span>
     </template>
   </div>
@@ -44,7 +44,9 @@ export default {
 $input-height: 32px;
 $font-size: 14px;
 $border-color: #409eff;
-$red: #e94043;
+$border-hover-color: #426fc5;
+$red-color: #e94043;
+$red-hover-color: #d2181c;
 .message {
   font-size: $font-size;
   display: inline-flex;
@@ -58,7 +60,7 @@ $red: #e94043;
     border: 2px solid $border-color;
     font-size: inherit;
     &:hover {
-      border-color: $border-color;
+      border-color: $border-hover-color;
     }
     &:focus {
       outline: none;
@@ -66,33 +68,33 @@ $red: #e94043;
     }
     &[disabled],
     &[readOnly] {
-      border-color: #bbb;
-      color: #bbb;
+      border-color: #909399;
+      color: #909399;
       cursor: not-allowed;
     }
     &[readOnly]:focus {
       outline: none;
-      box-shadow: inset 0 1px 3px #bbb;
+      box-shadow: inset 0 1px 3px #909399;
     }
     &[disabled] {
-      background-color: #ebebe4;
+      background-color: #dcdfe6;
     }
   }
   &.error {
     > input {
-      border: 2px solid $red;
-      color: $red;
+      border: 2px solid $red-color;
+      color: $red-color;
+      &:hover {
+        border-color: $red-hover-color;
+      }
       &:focus {
         outline: none;
-        box-shadow: inset 0 1px 3px $red;
+        box-shadow: inset 0 1px 3px $red-color;
       }
     }
   }
-  .icon-error {
-    fill: $red;
-  }
   .error-message {
-    color: $red;
+    color: $red-color;
     line-height: 1em;
   }
 }

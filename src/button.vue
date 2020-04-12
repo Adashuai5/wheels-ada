@@ -65,9 +65,9 @@ export default {
         success: "#159957",
         warning: "#f34711",
         danger: "#d2181c"
-      },
+      }
     };
-  },
+  }
 };
 </script>
 <style lang="scss" scoped>
