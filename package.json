@@ -1,6 +1,6 @@
 {
   "name": "wheels-ada",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "这是一个 UI 框架",
   "main": "dist/index.js",
   "scripts": {
