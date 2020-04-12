@@ -4,11 +4,11 @@ heroImage: /ada.png
 actionText: get start →
 actionLink: /introduce/
 features:
-- title: 简明优先
-  details: 极简化设计，注重内部功能实现。
+- title: Elegant
+  details: 优雅简洁，并赋予组件涟漪动态效果。
 - title: Vue 驱动
-  details: 一款基于 Vue2.0 的 UI 库。
+  details: 一款基于 Vue 2.0 的 UI 库(Vue 3 之后计划重写)。
 - title: 持续集成
   details: 自动化测试，保证每个组件质量。
-footer: MIT Licensed | Copyright © 2018 Zhou Yuanda
+footer: MIT Licensed | Copyright © 2020 Zhou Yuanda
 ---

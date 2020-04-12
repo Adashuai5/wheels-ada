@@ -2,12 +2,16 @@
     <div>
         <w-tabs :selected="selected">
             <w-tabs-head>
-                <w-tabs-item name="1">1</w-tabs-item>
-                <w-tabs-item name="2">2</w-tabs-item>
+                <w-tabs-item name="1">item-1</w-tabs-item>
+                <w-tabs-item name="2">item-2</w-tabs-item>
+                <w-tabs-item name="3">item-3</w-tabs-item>
+                <w-tabs-item name="4">item-4</w-tabs-item>
             </w-tabs-head>
             <w-tabs-body>
-                <w-tabs-pane name="1">content 1</w-tabs-pane>
-                <w-tabs-pane name="2">content 2</w-tabs-pane>
+                <w-tabs-pane name="1">content-1</w-tabs-pane>
+                <w-tabs-pane name="2">content-2</w-tabs-pane>
+                <w-tabs-pane name="3">content-3</w-tabs-pane>
+                <w-tabs-pane name="4">content-4</w-tabs-pane>
             </w-tabs-body>
         </w-tabs>
     </div>

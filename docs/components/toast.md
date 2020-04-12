@@ -40,8 +40,8 @@ title: Toast
 ``` js{4}
 methods: {
     onClickButton () {
-        this.$toast('我不会自动关闭', {
-            autoClose: false
+        this.$toast('我会在 3 秒后自动关闭', {
+            autoClose: 3,
         })
     }
 }
