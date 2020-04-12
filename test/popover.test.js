@@ -48,7 +48,6 @@ describe('Popover', () => {
         const {contentWrapper,triggerWrapper} = vm.$refs.el.$refs
         vm.$nextTick(() => {
             let event = new Event('mouseenter')
-            console.log(event);
             triggerWrapper.dispatchEvent(event)
             const callback = sinon.fake();
             vm.$on('mouseenter', callback)

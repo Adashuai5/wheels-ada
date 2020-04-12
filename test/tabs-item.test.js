@@ -31,7 +31,7 @@ describe('TabsTabsItem', () => {
             vm.$el.remove()
             vm.$destroy()
         })
-        it('接收 name 属性.', () => {
+        it('接收 disabled 属性.', () => {
             const Constructor = Vue.extend(TabsItem)
             const vm = new Constructor({
                 propsData: {
