@@ -71,11 +71,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$button-width: 120px;
-$button-height: 32px;
 $font-size: 14px;
 $color: #fff;
-
 $color-primary: #409eff;
 $color-info: #909399;
 $color-success: #67c23a;
@@ -92,29 +89,30 @@ $color-danger: #e94043;
 }
 
 .w-button {
+  box-sizing: border-box;
+  white-space: nowrap;
   outline: none;
-  border: none;
   color: $color;
-  overflow: hidden;
   font-size: $font-size;
-  height: $button-height;
-  width: $button-width;
-  padding: 0 1rem;
+  line-height: 1;
+  padding: 0.5rem 1.2rem;
+  margin: 0;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   position: relative;
+  overflow: hidden;
   cursor: pointer;
   .w-button-content {
-    line-height: 1em;
+    line-height: 1rem;
   }
   > .w-button-content {
     order: 2;
   }
   > .icon {
     order: 1;
-    margin-right: 0.3em;
+    margin-right: 0.3rem;
   }
   &.icon-right {
     > .w-button-content {
@@ -123,7 +121,7 @@ $color-danger: #e94043;
     > .icon {
       order: 2;
       margin-right: 0;
-      margin-left: 0.3em;
+      margin-left: 0.3rem;
     }
   }
   .loading {
@@ -132,46 +130,51 @@ $color-danger: #e94043;
 }
 .color-primary {
   background-color: $color-primary;
+  border: 2px solid $color-primary;
 }
 .color-info {
   background-color: $color-info;
+  border: 2px solid $color-info;
 }
 .color-success {
   background-color: $color-success;
+  border: 2px solid $color-success;
 }
 .color-warning {
   background-color: $color-warning;
+  border: 2px solid $color-warning;
 }
 .color-danger {
   background-color: $color-danger;
+  border: 2px solid $color-danger;
 }
 
 .border-primary {
-  background-color: transparent;
+  background-color: $color;
   border: 2px solid $color-primary;
   color: $color-primary;
 }
 
 .border-info {
-  background-color: transparent;
+  background-color: $color;
   border: 2px solid $color-info;
   color: $color-info;
 }
 
 .border-success {
-  background-color: transparent;
+  background-color: $color;
   border: 2px solid $color-success;
   color: $color-success;
 }
 
 .border-warning {
-  background-color: transparent;
+  background-color: $color;
   border: 2px solid $color-warning;
   color: $color-warning;
 }
 
 .border-danger {
-  background-color: transparent;
+  background-color: $color;
   border: 2px solid $color-danger;
   color: $color-danger;
 }

@@ -1,33 +1,33 @@
 <template>
-    <div>
-        <w-button @click="onClickButton">顶部弹出</w-button>
-    </div>
+  <div>
+    <w-button @click="onClickButton">顶部弹出</w-button>
+  </div>
 </template>
 <style>
-    .w-toast {
-        z-index: 30 !important;
-    }
+.w-toast {
+  z-index: 30 !important;
+}
 </style>
 <script>
-    import Vue from 'vue'
-    import Toast from '../../../src/toast'
-    import Button from '../../../src/button'
-    import plugin from '../../../src/plugin'
+import Vue from "vue";
+import Toast from "../../../src/toast";
+import Button from "../../../src/button";
+import plugin from "../../../src/plugin";
 
-    Vue.use(plugin)
+Vue.use(plugin);
 
-    export default {
-        components: {
-            'w-toast': Toast,
-            'w-button': Button
-        },
-        methods: {
-            onClickButton() {
-                this.$toast('我会在 3 秒后自动关闭', {
-                    autoClose: 3,
-                })
-            }
-        }
+export default {
+  components: {
+    "w-toast": Toast,
+    "w-button": Button
+  },
+  methods: {
+    onClickButton() {
+      this.$toast("我会在 3 秒后自动关闭", {
+        autoClose: 3
+      });
     }
+  }
+};
 </script>
 

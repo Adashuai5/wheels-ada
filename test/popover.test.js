@@ -16,7 +16,7 @@ describe('Popover', () => {
         div.innerHTML = `
         <w-popover position="left" ref="el">
             <template slot="content">
-                内容
+                content-
             </template>
             <button>点我</button>
         </w-popover>
@@ -26,7 +26,7 @@ describe('Popover', () => {
         })
         vm.$el.querySelector('button').click()
         vm.$nextTick(() => {
-            const {contentWrapper} = vm.$refs.el.$refs
+            const { contentWrapper } = vm.$refs.el.$refs
             expect(contentWrapper.classList.contains('position-left')).to.be.true
             done()
         })
@@ -37,7 +37,7 @@ describe('Popover', () => {
         div.innerHTML = `
         <w-popover trigger="hover" ref="el">
             <template slot="content">
-                内容
+                content-
             </template>
             <button>点我</button>
         </w-popover>
@@ -45,7 +45,7 @@ describe('Popover', () => {
         const vm = new Vue({
             el: div
         })
-        const {contentWrapper,triggerWrapper} = vm.$refs.el.$refs
+        const { contentWrapper, triggerWrapper } = vm.$refs.el.$refs
         vm.$nextTick(() => {
             let event = new Event('mouseenter')
             triggerWrapper.dispatchEvent(event)

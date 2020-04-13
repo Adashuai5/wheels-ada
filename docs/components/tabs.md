@@ -4,6 +4,8 @@ title: Tabs 标签页
 
 # 标签页
 
+分隔内容上有关联但属于不同类别的数据集合，同样支持了涟漪效果
+
 ## 使用方法
 
 #### 浏览
@@ -40,5 +42,5 @@ data: {
 ```
 
 ::: tip
-w-tabs-item 与 w-tabs-pane 的 name需对应
+w-tabs-item 与 w-tabs-pane 的 name 需对应
 :::

@@ -1,6 +1,6 @@
 <template>
   <div class="w-collapse-item">
-    <div class="w-title" @click="toggle" data-color="#426FC5">{{title}}</div>
+    <div class="w-title" @click="toggle">{{title}}</div>
     <div class="w-content" v-if="open">
       <slot></slot>
     </div>
