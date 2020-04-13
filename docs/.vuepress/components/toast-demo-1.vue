@@ -1,8 +1,8 @@
 <template>
   <div>
-    <w-button @click="$toast('点击弹出提示')">顶部弹出</w-button>
-    <w-button @click="$toast('点击弹出提示', {position:'middle'})">中间弹出</w-button>
-    <w-button @click="$toast('点击弹出提示', {position:'bottom'})">底部弹出</w-button>
+    <w-button @click="$toast('点击弹出提示')" border>顶部弹出</w-button>
+    <w-button @click="$toast('点击弹出提示', {position:'middle'})" border>中间弹出</w-button>
+    <w-button @click="$toast('点击弹出提示', {position:'bottom'})" border>底部弹出</w-button>
   </div>
 </template>
 <style>

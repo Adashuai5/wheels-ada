@@ -1,19 +1,19 @@
 <template>
   <div>
     <w-popover>
-      <w-button>上方弹出</w-button>
+      <w-button border>上方弹出</w-button>
       <template slot="content">弹出内容</template>
     </w-popover>
     <w-popover position="bottom">
-      <w-button>下方弹出</w-button>
+      <w-button border>下方弹出</w-button>
       <template slot="content">弹出内容</template>
     </w-popover>
     <w-popover position="left">
-      <w-button>左边弹出</w-button>
+      <w-button border>左边弹出</w-button>
       <template slot="content">弹出内容</template>
     </w-popover>
     <w-popover position="right">
-      <w-button>右边弹出</w-button>
+      <w-button border>右边弹出</w-button>
       <template slot="content">弹出内容</template>
     </w-popover>
   </div>

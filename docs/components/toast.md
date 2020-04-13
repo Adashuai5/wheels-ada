@@ -30,11 +30,11 @@ title: Toast 吐司弹出
 
 ```html
 <div>
-  <w-button @click="$toast('点击弹出提示')">顶部弹出</w-button>
-  <w-button @click="$toast('点击弹出提示', {position:'middle'})"
+  <w-button @click="$toast('点击弹出提示')" border>顶部弹出</w-button>
+  <w-button @click="$toast('点击弹出提示', {position:'middle'})" border
     >中间弹出</w-button
   >
-  <w-button @click="$toast('点击弹出提示', {position:'bottom'})"
+  <w-button @click="$toast('点击弹出提示', {position:'bottom'})" border
     >底部弹出</w-button
   >
 </div>
@@ -64,7 +64,7 @@ methods: {
 
 ```html
 <div>
-  <w-button @click="onClickButton">顶部弹出</w-button>
+  <w-button @click="onClickButton" border>顶部弹出</w-button>
 </div>
 ```
 
@@ -101,7 +101,7 @@ methods: {
 
 ```html
 <div>
-  <w-button @click="onClickButton">顶部弹出</w-button>
+  <w-button @click="onClickButton" border>顶部弹出</w-button>
 </div>
 ```
 
@@ -131,7 +131,7 @@ methods: {
 
 ```html
 <div>
-  <w-button @click="onClickButton">顶部弹出</w-button>
+  <w-button @click="onClickButton" border>顶部弹出</w-button>
 </div>
 ```
 

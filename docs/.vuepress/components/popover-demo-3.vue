@@ -3,9 +3,9 @@
     <w-popover>
       <template slot="content" slot-scope="{close}">
         弹出内容
-        <w-button @click="close">关闭</w-button>
+        <w-button @click="close" round>关闭</w-button>
       </template>
-      <w-button>内部关闭</w-button>
+      <w-button border>内部关闭</w-button>
     </w-popover>
   </div>
 </template>

@@ -14,7 +14,7 @@ describe("Canvas", () => {
     const div = document.createElement("div");
     document.body.appendChild(div);
     div.innerHTML = `
-      <div data-color='#426fc5'>
+      <div data-color='#66b1ff'>
         <w-canvas ref="el" :drawed='true'></w-canvas>
       </div>
       `;
@@ -24,7 +24,7 @@ describe("Canvas", () => {
     const canvas = vm.$refs.el.$refs.wCanvas;
     vm.$nextTick(() => {
       const context = canvas.getContext("2d");
-      expect(context.fillStyle.toLowerCase()).to.eq("#426fc5");
+      expect(context.fillStyle.toLowerCase()).to.eq("#66b1ff");
       done();
       div.remove();
       vm.$destroy();

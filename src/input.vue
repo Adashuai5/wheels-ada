@@ -4,7 +4,7 @@
       type="text"
       :value="value"
       :disabled="disabled"
-      :readonly="readOnly"
+      :readonly="readonly"
       @change="$emit('change', $event.target.value)"
       @input="$emit('input', $event.target.value)"
       @focus="$emit('focus', $event.target.value)"
@@ -30,7 +30,7 @@ export default {
       type: Boolean,
       default: false
     },
-    readOnly: {
+    readonly: {
       type: Boolean,
       default: false
     },
@@ -44,9 +44,9 @@ export default {
 $input-height: 32px;
 $font-size: 14px;
 $border-color: #409eff;
-$border-hover-color: #426fc5;
-$red-color: #e94043;
-$red-hover-color: #d2181c;
+$border-hover-color: #66b1ff;
+$red-color: #d2181c;
+$red-hover-color: #e94043;
 .message {
   font-size: $font-size;
   display: inline-flex;

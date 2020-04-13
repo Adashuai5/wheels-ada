@@ -35,7 +35,7 @@ $color-default: #ffffff;
 $color-primary: #409eff;
 $color-info: #909399;
 $color-success: #67c23a;
-$color-warning: #f6774f;
+$color-warning: #f34711;
 $color-danger: #e94043;
 .w-icon {
   width: 1em;

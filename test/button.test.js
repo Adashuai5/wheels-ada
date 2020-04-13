@@ -127,7 +127,7 @@ describe("Button", () => {
     expect(context.fillStyle).to.eq("#000000");
     vm.$nextTick(() => {
       canvas.click();
-      expect(context.fillStyle).to.eq("#159957");
+      expect(context.fillStyle).to.eq("#5ab446");
       expect(callback).to.have.been.called;
       done();
       vm.$destroy();

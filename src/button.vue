@@ -60,11 +60,11 @@ export default {
   data() {
     return {
       dataSetColor: {
-        primary: "#426FC5",
-        info: "#606266",
-        success: "#159957",
-        warning: "#f34711",
-        danger: "#d2181c"
+        primary: "#66B1FF",
+        info: "#C0C4CC",
+        success: "#5ab446",
+        warning: "#f6774f",
+        danger: "#e94043"
       }
     };
   }
@@ -76,8 +76,8 @@ $color: #fff;
 $color-primary: #409eff;
 $color-info: #909399;
 $color-success: #67c23a;
-$color-warning: #f6774f;
-$color-danger: #e94043;
+$color-warning: #f34711;
+$color-danger: #d2181c;
 
 @keyframes spin {
   0% {

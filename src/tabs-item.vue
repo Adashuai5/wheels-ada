@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-item" @click="onClick" :class="classes" :data-name="name" data-color="#426FC5">
+  <div class="tabs-item" @click="onClick" :class="classes" :data-name="name" data-color="#66B1FF">
     <w-canvas :drawed="active"></w-canvas>
     <slot></slot>
   </div>

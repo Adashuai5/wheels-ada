@@ -1,6 +1,6 @@
 <template>
   <div>
-    <w-button @click="onClickButton">顶部弹出</w-button>
+    <w-button @click="onClickButton" border>顶部弹出</w-button>
   </div>
 </template>
 <style>

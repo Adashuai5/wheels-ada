@@ -1,13 +1,13 @@
 {
   "name": "wheels-ada",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "这是一个 UI 框架",
   "main": "dist/index.js",
   "scripts": {
     "start": "npx parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
-    "docs:dev": "vuepress dev docs",
+    "serve": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
   "repository": {
