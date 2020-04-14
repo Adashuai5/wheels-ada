@@ -2,6 +2,9 @@ module.exports = {
   base: "/wheels-ada/",
   title: "wheels-ada",
   description: "一个易用的 UI 框架",
+  markdown: {
+    anchor: { permalink: false },
+  },
   themeConfig: {
     nav: [
       { text: "主页", link: "/" },
@@ -33,6 +36,6 @@ module.exports = {
           "/components/toast"
         ]
       }
-    ]
+    ],
   }
 };
