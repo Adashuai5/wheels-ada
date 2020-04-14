@@ -32,7 +32,8 @@ export default {
   methods: {
     press(event) {
       this.clickedEvent = event;
-      this.clickedElement = event.toElement;
+      console.log(event)
+      this.clickedElement = event.target;
       this.insideRadius = 0;
       this.draw();
     },
@@ -55,8 +56,8 @@ export default {
       const context = this.clickedElement.getContext("2d");
       context.beginPath();
       context.arc(
-        this.clickedEvent.offsetX,
-        this.clickedEvent.offsetY,
+        this.clickedEvent.layerX||this.clickedEvent.offsetX,
+        this.clickedEvent.layerY||this.clickedEvent.offsetY,
         this.insideRadius,
         0,
         2 * Math.PI,
