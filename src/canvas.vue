@@ -32,7 +32,6 @@ export default {
   methods: {
     press(event) {
       this.clickedEvent = event;
-      console.log(event)
       this.clickedElement = event.target;
       this.insideRadius = 0;
       this.draw();
