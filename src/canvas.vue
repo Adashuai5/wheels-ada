@@ -30,8 +30,8 @@ export default {
   },
   methods: {
     press(event) {
-      this.clickedEvent = event;
       this.insideRadius = 0;
+      this.clickedEvent = event;
       this.draw();
     },
     clearRect() {
@@ -50,9 +50,7 @@ export default {
       }
     },
     draw() {
-      if (this.insideRadius === 0) {
-        this.clearRect();
-      }
+      this.clearRect();
       const context = this.clickedEvent.target.getContext("2d");
       context.beginPath();
       context.arc(
