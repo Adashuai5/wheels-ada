@@ -12,8 +12,7 @@ export default {
   },
   data() {
     return {
-      clickedEvent: {},
-      clickedElement: {},
+      clickedEvent: "",
       insideRadius: 0
     };
   },
@@ -32,7 +31,6 @@ export default {
   methods: {
     press(event) {
       this.clickedEvent = event;
-      this.clickedElement = event.target;
       this.insideRadius = 0;
       this.draw();
     },
@@ -44,27 +42,30 @@ export default {
           context.clearRect(
             0,
             0,
-            this.clickedElement.width,
-            this.clickedElement.height
+            this.$refs.wCanvas.width,
+            this.$refs.wCanvas.height
           );
+          context.fillStyle = "#000000";
         }
       }
     },
     draw() {
-      this.clearRect();
-      const context = this.clickedElement.getContext("2d");
+      if (this.insideRadius === 0) {
+        this.clearRect();
+      }
+      const context = this.clickedEvent.target.getContext("2d");
       context.beginPath();
       context.arc(
-        this.clickedEvent.layerX||this.clickedEvent.offsetX,
-        this.clickedEvent.layerY||this.clickedEvent.offsetY,
+        this.clickedEvent.layerX || this.clickedEvent.offsetX,
+        this.clickedEvent.layerY || this.clickedEvent.offsetY,
         this.insideRadius,
         0,
         2 * Math.PI,
         false
       );
-      context.fillStyle = this.clickedElement.parentElement.dataset.color;
+      context.fillStyle = this.clickedEvent.target.parentElement.dataset.color;
       context.fill();
-      this.insideRadius += 3;
+      this.insideRadius += 4;
       const requestAnimFrame = (function() {
         return (
           window.requestAnimationFrame ||
@@ -76,7 +77,11 @@ export default {
           }
         );
       })();
-      if (this.insideRadius < this.clickedElement.width) {
+      if (
+        this.insideRadius <
+        this.clickedEvent.target.parentElement.offsetWidth +
+          this.clickedEvent.target.parentElement.offsetHeight
+      ) {
         requestAnimFrame(this.draw);
       }
     }
