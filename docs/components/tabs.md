@@ -31,6 +31,7 @@ data: {
     <w-tabs-item name="2">item-2</w-tabs-item>
     <w-tabs-item name="3">item-3</w-tabs-item>
     <w-tabs-item name="4">item-4</w-tabs-item>
+    <w-tabs-item name="5" disabled>item-disabled</w-tabs-item>
   </w-tabs-head>
   <w-tabs-body>
     <w-tabs-pane name="1">content-1</w-tabs-pane>
@@ -42,5 +43,5 @@ data: {
 ```
 
 ::: tip
-w-tabs-item 与 w-tabs-pane 的 name 需对应
+w-tabs-item 与 w-tabs-pane 的 name 需对应；在 w-tabs-item 设置 disabled 可以让其为不可用状态。
 :::

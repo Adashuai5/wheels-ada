@@ -52,7 +52,7 @@ $border-color: #ddd;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 }
 </style>

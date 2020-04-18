@@ -1,6 +1,6 @@
 <template>
   <div class="tabs-item" @click="onClick" :class="classes" :data-name="name" data-color="#66B1FF">
-    <w-canvas :drawed="active"></w-canvas>
+    <w-canvas :drawed="active" v-if="!disabled"></w-canvas>
     <slot></slot>
   </div>
 </template>
@@ -14,7 +14,8 @@ export default {
   },
   data() {
     return {
-      active: false
+      active: false,
+      isOverflowHidden: false
     };
   },
   props: {
@@ -31,7 +32,8 @@ export default {
     classes() {
       return {
         active: this.active,
-        disabled: this.disabled
+        disabled: this.disabled,
+        "is-overflow-hidden": this.isOverflowHidden
       };
     }
   },
@@ -40,6 +42,19 @@ export default {
       this.eventBus.$on("update:selected", name => {
         this.active = name === this.name;
       });
+    }
+  },
+  mounted() {
+    const explorer = window.navigator.userAgent;
+    // 替换不支持 clip-path 浏览器为 overflow: hidden
+    if (
+      explorer.indexOf("Trident") >= 0 ||
+      explorer.indexOf("Edge") >= 0 ||
+      explorer.indexOf("Opera") >= 0
+    ) {
+      this.isOverflowHidden = true;
+    } else {
+      this.isOverflowHidden = false;
     }
   },
   methods: {
@@ -56,7 +71,7 @@ export default {
 <style scoped lang="scss">
 $active-color: #409eff;
 $font-family: PingFangSC-Regular;
-$disabled-text-color: gray;
+$disabled-text-color: #909399;
 .tabs-item {
   flex-shrink: 0;
   padding: 0 2rem;
@@ -64,7 +79,7 @@ $disabled-text-color: gray;
   font-family: $font-family;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   position: relative;
   cursor: pointer;
   &.active {
@@ -72,7 +87,12 @@ $disabled-text-color: gray;
   }
   &.disabled {
     color: $disabled-text-color;
-    cursor: default;
+    opacity: 0.5;
+    cursor: not-allowed;
   }
+}
+
+.is-overflow-hidden {
+  overflow: hidden;
 }
 </style>
