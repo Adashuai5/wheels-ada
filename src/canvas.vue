@@ -8,11 +8,16 @@ export default {
     drawed: {
       type: Boolean,
       default: false
+    },
+    globalListen: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
       clickedEvent: "",
+      clickedParentElement: "",
       insideRadius: 0
     };
   },
@@ -28,24 +33,41 @@ export default {
       }
     });
   },
+  destroyed() {
+    if (this.$refs.wCanvas && this.globalListen) {
+      document.removeEventListener("click", this.onClickDocument);
+    }
+  },
   methods: {
+    onClickDocument(e) {
+      if (
+        this.$refs.wCanvas &&
+        (this.$refs.wCanvas === e.target ||
+          this.$refs.wCanvas.contains(e.target))
+      ) {
+        return;
+      }
+      this.clearRect();
+      document.removeEventListener("click", this.onClickDocument);
+    },
     press(event) {
       this.insideRadius = 0;
       this.clickedEvent = event;
+      this.clickedParentElement = event.target.parentElement;
       this.draw();
+      if (this.globalListen) {
+        this.$nextTick(() => {
+          document.addEventListener("click", this.onClickDocument);
+        });
+      }
     },
     clearRect() {
       const canvass = document.getElementsByClassName("w-canvas");
       for (let i = 0; i < canvass.length; i++) {
         const context = canvass[i].getContext("2d");
         if (context.fillStyle !== "#000000") {
-          context.clearRect(
-            0,
-            0,
-            this.$refs.wCanvas.width,
-            this.$refs.wCanvas.height
-          );
           context.fillStyle = "#000000";
+          context.clearRect(0, 0, canvass[i].width, canvass[i].height);
         }
       }
     },
@@ -61,15 +83,12 @@ export default {
         2 * Math.PI,
         false
       );
-      context.fillStyle = this.clickedEvent.target.parentElement.dataset.color;
+      context.fillStyle = this.clickedParentElement.dataset.color;
       context.fill();
-      this.insideRadius += 4;
+      this.insideRadius += 5;
       const requestAnimFrame = (function() {
         return (
           window.requestAnimationFrame ||
-          window.mozRequestAnimationFrame ||
-          window.oRequestAnimationFrame ||
-          window.msRequestAnimationFrame ||
           function(callback) {
             window.setTimeout(callback, 1000 / 60);
           }
@@ -77,8 +96,8 @@ export default {
       })();
       if (
         this.insideRadius <
-        this.clickedEvent.target.parentElement.offsetWidth +
-          this.clickedEvent.target.parentElement.offsetHeight
+        this.clickedParentElement.offsetWidth +
+          this.clickedParentElement.offsetHeight
       ) {
         requestAnimFrame(this.draw);
       }

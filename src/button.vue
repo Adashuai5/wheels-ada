@@ -5,7 +5,7 @@
     @click="$emit('click')"
     :data-color="dataSetColor[type]"
   >
-    <w-canvas></w-canvas>
+    <w-canvas globalListen></w-canvas>
     <w-icon class="icon" v-if="icon && !loading" :name="icon" :fill="type" :border="border"></w-icon>
     <w-icon class="loading icon" v-if="loading" name="loading" :fill="type" :border="border"></w-icon>
     <div class="w-button-content">
