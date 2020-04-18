@@ -59,7 +59,7 @@ $font-family: PingFangSC-Regular;
 $disabled-text-color: gray;
 .tabs-item {
   flex-shrink: 0;
-  padding: 0 1em;
+  padding: 0 2rem;
   height: 100%;
   font-family: $font-family;
   display: flex;

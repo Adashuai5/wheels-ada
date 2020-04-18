@@ -179,6 +179,6 @@ $color-danger: #d2181c;
   color: $color-danger;
 }
 .is-round {
-  border-radius: 10em;
+  border-radius: 10rem;
 }
 </style>

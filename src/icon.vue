@@ -38,8 +38,8 @@ $color-success: #67c23a;
 $color-warning: #f34711;
 $color-danger: #e94043;
 .w-icon {
-  width: 1em;
-  height: 1em;
+  width: 1rem;
+  height: 1rem;
 }
 .color-default {
   fill: $color-default;

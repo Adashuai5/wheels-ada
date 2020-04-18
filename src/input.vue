@@ -52,7 +52,7 @@ $red-hover-color: #e94043;
   display: inline-flex;
   align-items: center;
   > :not(:last-child) {
-    margin-right: 0.5em;
+    margin-right: 0.5rem;
   }
   > input {
     padding: 0 8px;
@@ -95,7 +95,7 @@ $red-hover-color: #e94043;
   }
   .error-message {
     color: $red-color;
-    line-height: 1em;
+    line-height: 1rem;
   }
 }
 </style>
