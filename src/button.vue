@@ -1,11 +1,12 @@
 <template>
   <button
     class="w-button"
-    :class="{[`icon-${iconPosition}`]: true,[`color-${type}`]: !border,[`border-${type}`]: border,'is-round': round}"
+    :class="{[`icon-${iconPosition}`]: true,[`color-${type}`]: !border,[`border-${type}`]: border,'is-round': round,'is-loading': loading}"
     @click="$emit('click')"
+    :disabled="disabled"
     :data-color="dataSetColor[type]"
   >
-    <w-canvas globalListen></w-canvas>
+    <w-canvas globalListen v-if="!disabled && !loading"></w-canvas>
     <w-icon class="icon" v-if="icon && !loading" :name="icon" :fill="type" :border="border"></w-icon>
     <w-icon class="loading icon" v-if="loading" name="loading" :fill="type" :border="border"></w-icon>
     <div class="w-button-content">
@@ -36,6 +37,10 @@ export default {
           value === "danger"
         );
       }
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
     loading: {
       type: Boolean,
@@ -127,6 +132,16 @@ $color-danger: #d2181c;
   .loading {
     animation: spin 1.5s infinite linear;
   }
+  &[disabled],
+  &[readOnly] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.is-loading {
+  opacity: 0.75;
+  cursor: wait;
 }
 .color-primary {
   background-color: $color-primary;

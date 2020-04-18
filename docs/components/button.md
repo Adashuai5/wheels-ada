@@ -53,6 +53,37 @@ title: Button 按钮
 </div>
 ```
 
+## 禁用状态
+
+#### 浏览
+
+#
+
+<ClientOnly>
+  <button-disabled></button-disabled>
+</ClientOnly>
+
+#### 代码
+
+```html
+<div>
+  <div class="demoRow">
+    <w-button disabled>默认按钮</w-button>
+    <w-button type="success" disabled>成功按钮</w-button>
+    <w-button type="info" disabled>信息按钮</w-button>
+    <w-button type="warning" disabled>警告按钮</w-button>
+    <w-button type="danger" disabled>危险按钮</w-button>
+  </div>
+  <div class="demoRow">
+    <w-button border disabled>默认按钮</w-button>
+    <w-button type="success" border disabled>成功按钮</w-button>
+    <w-button type="info" border disabled>信息按钮</w-button>
+    <w-button type="warning" border disabled>警告按钮</w-button>
+    <w-button type="danger" border disabled>危险按钮</w-button>
+  </div>
+</div>
+```
+
 ## 添加图标
 
 #### 浏览
