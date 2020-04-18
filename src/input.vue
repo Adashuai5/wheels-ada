@@ -47,6 +47,7 @@ $border-color: #409eff;
 $border-hover-color: #66b1ff;
 $red-color: #d2181c;
 $red-hover-color: #e94043;
+$disabled-color: #909399;
 .message {
   font-size: $font-size;
   display: inline-flex;
@@ -68,16 +69,16 @@ $red-hover-color: #e94043;
     }
     &[disabled],
     &[readOnly] {
-      border-color: #909399;
-      color: #909399;
+      border-color: $disabled-color;
+      color: $disabled-color;
       cursor: not-allowed;
     }
     &[readOnly]:focus {
       outline: none;
-      box-shadow: inset 0 1px 3px #909399;
+      box-shadow: inset 0 1px 3px $disabled-color;
     }
     &[disabled] {
-      background-color: #dcdfe6;
+      opacity: 0.5;
     }
   }
   &.error {

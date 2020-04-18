@@ -1,7 +1,7 @@
 <template>
   <button
     class="w-button"
-    :class="{[`icon-${iconPosition}`]: true,[`color-${type}`]: !border,[`border-${type}`]: border,'is-round': round,'is-loading': loading}"
+    :class="classes"
     @click="$emit('click')"
     :disabled="disabled"
     :data-color="dataSetColor[type]"
@@ -60,6 +60,17 @@ export default {
       validator(value) {
         return value === "left" || value === "right";
       }
+    }
+  },
+  computed: {
+    classes() {
+      return {
+        [`icon-${this.iconPosition}`]: true,
+        [`color-${this.type}`]: !this.border,
+        [`border-${this.type}`]: this.border,
+        "is-round": this.round,
+        "is-loading": this.loading
+      };
     }
   },
   data() {

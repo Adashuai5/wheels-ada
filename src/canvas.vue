@@ -28,7 +28,17 @@ export default {
         const context = canvas.getContext("2d");
         context.fillStyle = canvas.parentElement.dataset.color;
         context.beginPath();
-        context.arc(0, 0, 300, 0, 2 * Math.PI, false);
+        context.arc(
+          0,
+          0,
+          this.getTheBevel(
+            canvas.parentElement.offsetWidth,
+            canvas.parentElement.offsetHeight
+          ),
+          0,
+          2 * Math.PI,
+          false
+        );
         context.fill();
       }
     });
@@ -39,6 +49,9 @@ export default {
     }
   },
   methods: {
+    getTheBevel(x, y) {
+      return Math.sqrt(x * x + y * y);
+    },
     onClickDocument(e) {
       if (
         this.$refs.wCanvas &&
@@ -96,8 +109,10 @@ export default {
       })();
       if (
         this.insideRadius <
-        this.clickedParentElement.offsetWidth +
+        this.getTheBevel(
+          this.clickedParentElement.offsetWidth,
           this.clickedParentElement.offsetHeight
+        )
       ) {
         requestAnimFrame(this.draw);
       }
