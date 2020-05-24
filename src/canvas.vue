@@ -99,14 +99,6 @@ export default {
       context.fillStyle = this.clickedParentElement.dataset.color;
       context.fill();
       this.insideRadius += 5;
-      const requestAnimFrame = (function() {
-        return (
-          window.requestAnimationFrame ||
-          function(callback) {
-            window.setTimeout(callback, 1000 / 60);
-          }
-        );
-      })();
       if (
         this.insideRadius <
         this.getTheBevel(
@@ -114,7 +106,7 @@ export default {
           this.clickedParentElement.offsetHeight
         )
       ) {
-        requestAnimFrame(this.draw);
+        window.requestAnimationFrame(this.draw);
       }
     }
   }
