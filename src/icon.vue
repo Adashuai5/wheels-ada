@@ -1,6 +1,6 @@
 <template>
   <svg class="w-icon">
-    <use :xlink:href="`#i-${name}`" :class="{'color-default':!border,[`color-${fill}`]: border}" />
+    <use :xlink:href="`#i-${name}`" :class="{'color':!border,[`color-${fill}`]: border}" />
   </svg>
 </template>
 <script>
@@ -31,18 +31,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$color-default: #ffffff;
-$color-primary: #409eff;
-$color-info: #909399;
-$color-success: #67c23a;
-$color-warning: #f34711;
-$color-danger: #e94043;
+@import "var";
+
 .w-icon {
   width: 1rem;
   height: 1rem;
 }
-.color-default {
-  fill: $color-default;
+.color {
+  fill: $color;
 }
 .color-primary {
   fill: $color-primary;

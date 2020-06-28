@@ -41,13 +41,8 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$input-height: 32px;
-$font-size: 14px;
-$border-color: #409eff;
-$border-hover-color: #66b1ff;
-$red-color: #d2181c;
-$red-hover-color: #e94043;
-$disabled-color: #909399;
+@import "var";
+
 .message {
   font-size: $font-size;
   display: inline-flex;
@@ -58,24 +53,24 @@ $disabled-color: #909399;
   > input {
     padding: 0 8px;
     height: $input-height;
-    border: 2px solid $border-color;
+    border: 2px solid $color-primary;
     font-size: inherit;
     &:hover {
       border-color: $border-hover-color;
     }
     &:focus {
       outline: none;
-      box-shadow: inset 0 1px 3px $border-color;
+      box-shadow: inset 0 1px 3px $color-primary;
     }
     &[disabled],
     &[readOnly] {
-      border-color: $disabled-color;
-      color: $disabled-color;
+      border-color: $color-info;
+      color: $color-info;
       cursor: not-allowed;
     }
     &[readOnly]:focus {
       outline: none;
-      box-shadow: inset 0 1px 3px $disabled-color;
+      box-shadow: inset 0 1px 3px $color-info;
     }
     &[disabled] {
       opacity: 0.5;
@@ -83,19 +78,19 @@ $disabled-color: #909399;
   }
   &.error {
     > input {
-      border: 2px solid $red-color;
-      color: $red-color;
+      border: 2px solid $color-danger;
+      color: $color-danger;
       &:hover {
         border-color: $red-hover-color;
       }
       &:focus {
         outline: none;
-        box-shadow: inset 0 1px 3px $red-color;
+        box-shadow: inset 0 1px 3px $color-danger;
       }
     }
   }
   .error-message {
-    color: $red-color;
+    color: $color-danger;
     line-height: 1rem;
   }
 }

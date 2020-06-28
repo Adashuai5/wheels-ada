@@ -125,8 +125,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$border-color: #ebeef5;
-$border-radius: 4px;
+@import "var";
+
 .popover {
   display: inline-block;
   position: relative;

@@ -27,9 +27,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-$tabs-height: 40px;
-$color: #409eff;
-$border-color: #ddd;
+@import "var";
+
 * {
   margin: 0;
   padding: 0;
@@ -37,14 +36,14 @@ $border-color: #ddd;
 }
 .tabs-head {
   display: flex;
-  height: $tabs-height;
+  height: $min-height;
   justify-content: flex-start;
   position: relative;
   border-bottom: 2px solid $border-color;
   > .line {
     position: absolute;
     bottom: -2px;
-    border-bottom: 2px solid $color;
+    border-bottom: 2px solid $color-primary;
     transition: all 300ms;
   }
   > .actions-wrapper {

@@ -87,13 +87,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-$font-size: 14px;
-$color: #fff;
-$color-primary: #409eff;
-$color-info: #909399;
-$color-success: #67c23a;
-$color-warning: #f34711;
-$color-danger: #d2181c;
+@import "var";
 
 @keyframes spin {
   0% {

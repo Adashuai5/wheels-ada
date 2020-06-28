@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$border-color: #409eff;
+@import "var";
 .w-collapse-item {
   > .w-title {
     border: 2px solid $border-color;

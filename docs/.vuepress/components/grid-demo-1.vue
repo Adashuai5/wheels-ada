@@ -106,7 +106,7 @@ export default {
 }
 .demoCol {
   height: 50px;
-  border: 1px solid #ccc;
+  border: 1px solid #ebeef5;
   background: #409eff;
   display: flex;
   justify-content: center;

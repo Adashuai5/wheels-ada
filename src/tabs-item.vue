@@ -69,9 +69,8 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-$active-color: #409eff;
-$font-family: PingFangSC-Regular;
-$disabled-text-color: #909399;
+@import "var";
+
 .tabs-item {
   flex-shrink: 0;
   padding: 0 2rem;
@@ -83,10 +82,10 @@ $disabled-text-color: #909399;
   position: relative;
   cursor: pointer;
   &.active {
-    color: $active-color;
+    color: $color-primary;
   }
   &.disabled {
-    color: $disabled-text-color;
+    color: $color-info;
     opacity: 0.5;
     cursor: not-allowed;
   }
