@@ -19,7 +19,7 @@ title: Input 输入框
 #### 代码
 
 ```html
-<w-input value="中文"></w-input>
+<w-input value="中文" title='中文'></w-input>
 <w-input value="中文" readonly></w-input>
 <w-input value="中文" disabled></w-input>
 <w-input value="中文" error="错误"></w-input>

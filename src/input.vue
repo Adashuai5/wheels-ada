@@ -3,6 +3,7 @@
     <input
       type="text"
       :value="value"
+      :title="title"
       :disabled="disabled"
       :readonly="readonly"
       @change="$emit('change', $event.target.value)"
@@ -24,6 +25,9 @@ export default {
   name: "WheelsInput",
   props: {
     value: {
+      type: String
+    },
+    title: {
       type: String
     },
     disabled: {
