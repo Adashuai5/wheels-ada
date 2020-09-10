@@ -33,7 +33,8 @@ module.exports = {
           "/components/layout",
           "/components/popover",
           "/components/collapse",
-          "/components/toast"
+          "/components/toast",
+          "/components/list",
         ]
       }
     ],
