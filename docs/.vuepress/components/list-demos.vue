@@ -17,7 +17,7 @@ export default {
     };
   },
   created() {
-    for (let i = 0; i < 99; i++) {
+    for (let i = 0; i < 9999; i++) {
       this.originalList.push({ id: i, value: i });
     }
   },

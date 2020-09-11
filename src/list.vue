@@ -14,7 +14,7 @@
         v-for="item in visibleData"
         :key="item.id"
         :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }"
-        @click="onRemove(item.id)"
+        @click="onRemove($event, item.id)"
         @transitionend="onRemoveTransitionEnd"
       >
         {{ item.value }}
@@ -59,7 +59,7 @@ export default {
     /* 获取真实显示列表数据 */
     visibleData() {
       return this.originalList.slice(
-        this.start,
+        Math.max(this.start, 0),
         Math.min(this.end, this.originalList.length)
       );
     },
@@ -80,42 +80,24 @@ export default {
       /* 展示列起始索引 */
       start: 0,
       /* 展示列结束索引 */
-      end: null,
+      end: 0,
     };
   },
   methods: {
-    onRemove(id) {
-      const list = this.originalList.slice(
-        this.start,
-        Math.min(this.end, this.originalList.length)
-      );
-
+    onRemove(e, id) {
+      const { target: item } = e;
       this.index = this.visibleData.findIndex((item) => id === item.id);
-      const item = this.$refs.items[this.index];
-      item.style.backgroundColor = "#d3d3d3";
       item.innerText = "";
-      item.classList.add("animate");
+      item.style.backgroundColor = "#d3d3d3";
+      item.classList.add("remove-animate");
     },
     onRemoveTransitionEnd() {
-      this.originalList.splice(
-        this.index +
-          (this.isScrollDown ? this.start : this.start - this.overscan),
-        1
-      );
+      this.originalList.splice(this.index + this.start, 1);
     },
     onScroll() {
-      let scrollTop = this.$refs.list.scrollTop;
-      this.start = Math.floor(scrollTop / this.itemHeight);
-      this.end = this.start + this.visibleCount;
-      this.isScrollDown = scrollTop >= this.scrollTop;
-      this.isScrollDown
-        ? (this.end +=
-            this.overscan <= this.originalList.length
-              ? (this.end += this.overscan)
-              : this.originalList.length)
-        : (this.start -=
-            this.overscan > this.overscan ? (this.start -= this.overscan) : 0);
-      this.scrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      this.scrollTop = this.$refs.list.scrollTop;
+      this.start = Math.floor(this.scrollTop / this.itemHeight);
+      this.end = this.start + this.visibleCount + this.overscan;
     },
   },
 };
@@ -150,7 +132,7 @@ export default {
       border: 2px solid $color-primary;
     }
 
-    .animate {
+    .remove-animate {
       padding: 0 !important;
       border: 0 !important;
       height: 0 !important;
