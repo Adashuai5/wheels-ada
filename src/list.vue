@@ -1,25 +1,21 @@
 <template>
-  <div ref="list" class="list-container" @scroll="onScroll">
+  <div
+    ref="list"
+    class="list-container"
+    @scroll="onScroll"
+    @transitionend="onTransitionEnd"
+  >
     <div
       class="list-phantom"
       :style="{ height: originalListHeight + 'px' }"
     ></div>
-    <div
+    <transition-group
+      :name="listName"
       class="list"
       :style="{ transform: 'translateY(' + getTransform + 'px)' }"
     >
-      <div
-        ref="items"
-        class="list-item"
-        v-for="item in visibleData"
-        :key="item.id"
-        :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }"
-        @click="onRemove($event, item.id)"
-        @transitionend="onRemoveTransitionEnd"
-      >
-        {{ item.value }}
-      </div>
-    </div>
+      <slot name="items" :visibleData="visibleData"></slot>
+    </transition-group>
   </div>
 </template>
 
@@ -42,11 +38,16 @@ export default {
       type: Number,
       default: 5,
     },
+    /* 是否开启动画 */
+    animation: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     /* 列表总高度 */
     originalListHeight() {
-      return this.originalList.length * this.itemHeight;
+      return this.originLength * this.itemHeight;
     },
     /* 展示列表项 */
     visibleCount() {
@@ -60,14 +61,9 @@ export default {
     visibleData() {
       return this.originalList.slice(
         Math.max(this.start, 0),
-        Math.min(this.end, this.originalList.length)
+        Math.min(this.end, this.originLength)
       );
     },
-  },
-  mounted() {
-    this.screenHeight = this.$el.clientHeight;
-    this.start = 0;
-    this.end = this.start + this.visibleCount + this.overscan;
   },
   data() {
     return {
@@ -81,31 +77,49 @@ export default {
       start: 0,
       /* 展示列结束索引 */
       end: 0,
+      /* 列表名称（用于动画） */
+      listName: "",
+      /* 列表长度 */
+      originLength: 0,
     };
   },
+  watch: {
+    originalList(val) {
+      if (val) {
+        this.animation && (this.listName = "list");
+        this.$emit("change");
+        if (val.length === this.originLength - 1) {
+          this.$emit("remove");
+        } else if (val.length > this.originLength) {
+          this.$emit("add");
+        }
+        this.originLength = this.originalList.length;
+      }
+    },
+  },
+  created() {
+    this.start = 0;
+    this.originLength = this.originalList.length;
+  },
+  mounted() {
+    this.screenHeight = this.$el.clientHeight;
+    this.end = this.start + this.visibleCount + this.overscan;
+  },
   methods: {
-    onRemove(e, id) {
-      const { target: item } = e;
-      this.index = this.visibleData.findIndex((item) => id === item.id);
-      item.innerText = "";
-      item.style.backgroundColor = "#d3d3d3";
-      item.classList.add("remove-animate");
-    },
-    onRemoveTransitionEnd() {
-      this.originalList.splice(this.index + this.start, 1);
-    },
     onScroll() {
       this.scrollTop = this.$refs.list.scrollTop;
       this.start = Math.floor(this.scrollTop / this.itemHeight);
       this.end = this.start + this.visibleCount + this.overscan;
+      this.end - this.overscan === this.originLength && this.$emit("scroll");
+    },
+    onTransitionEnd() {
+      this.listName = "";
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "var";
-
 .list-container {
   height: 100%;
   overflow: auto;
@@ -124,21 +138,34 @@ export default {
     left: 0;
     top: 0;
     right: 0;
-    text-align: center;
-
-    .list-item {
-      color: $color-primary;
-      box-sizing: border-box;
-      border: 2px solid $color-primary;
-    }
-
-    .remove-animate {
-      padding: 0 !important;
-      border: 0 !important;
-      height: 0 !important;
-      line-height: 0 !important;
-      transition: height 0.5s ease;
-    }
   }
+}
+</style>
+<style>
+.list-enter-active,
+.list-leave-active,
+.list-move {
+  transition: 500ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+  transition-property: opacity, transform;
+}
+
+.list-enter {
+  opacity: 0;
+  transform: translateX(50px) scaleY(0.5);
+}
+
+.list-enter-to {
+  opacity: 1;
+  transform: translateX(0) scaleY(1);
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+.list-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: center top;
 }
 </style>
