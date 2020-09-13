@@ -2,7 +2,7 @@
   <w-list
     :originalList="originalList"
     :itemHeight="itemHeight"
-    :estimatedItemSize="50"
+    :estimatedItemHeight="60"
     style="width: 500px; height: 600px;"
   >
     <template #items="{ visibleData }">

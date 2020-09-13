@@ -120,6 +120,11 @@ export default {
     this.originLength = this.originalList.length;
     this.estimatedItemHeight && (this.fixedHeight = false);
     this.estimatedItemHeight && this.initPositions();
+    !this.estimatedItemHeight &&
+      typeof this.itemHeight !== "number" &&
+      console &&
+      console.warn &&
+      console.warn("只有在传入 estimatedItemHeight 时 itemHeight 才能是 array");
   },
   mounted() {
     this.screenHeight = this.$el.clientHeight;

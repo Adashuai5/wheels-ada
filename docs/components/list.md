@@ -209,11 +209,9 @@ methods: {
 
 ## 动态高度
 
-有时你的列表元素高度并非静态像素，此时你可以传入 estimatedItemSize 作为初始化展示高度，在视图更新时组件会还原元素真实高度
+有时你的列表元素高度并非静态像素，此时你可以传入 estimatedItemHeight 作为初始化展示高度，在视图更新时组件会还原元素真实高度
 
-:::tip
-在元素高度一致时尽量使用性能更好的静态高度
-:::
+#### 浏览
 
 #
 
@@ -221,13 +219,17 @@ methods: {
 <list-demo-4 />
 </ClientOnly>
 
+:::tip
+在元素高度一致时尽量使用性能更好的静态高度
+:::
+
 #### 代码
 
 ```html{4}
 <w-list
   :originalList="originalList"
   :itemHeight="itemHeight"
-  :estimatedItemSize="50"
+  :estimatedItemHeight="60"
   style="width: 500px; height: 600px;"
 >
   <template #items="{ visibleData }">
@@ -265,13 +267,13 @@ created() {
 
 ### 参数
 
-| 参数                | 说明                                                                                    | 类型          | 默认值 |
-| ------------------- | --------------------------------------------------------------------------------------- | ------------- | ------ |
-| originalList        | 包含大量数据的列表                                                                      | array         | []     |
+| 参数                | 说明                                                                                     | 类型          | 默认值 |
+| ------------------- | ---------------------------------------------------------------------------------------- | ------------- | ------ |
+| originalList        | 包含大量数据的列表                                                                       | array         | []     |
 | itemHeight          | 行高度，静态高度可以直接写入像素值；动态高度可填入数组（仅适合开启 estimatedItemHeight） | number, array | 80     |
-| estimatedItemHeight | 行预估高度，组件通过是否传入该值判断是否需要使用动态高度                                | number        | 0      |
-| overscan            | 展示列表上下视区上、下额外展示的 dom 节点数量预留项                                     | number        | 5      |
-| animation           | 是否开启动画（仅在使用钩子时有效）                                                      | Boolean       | false  |
+| estimatedItemHeight | 行预估高度，组件通过是否传入该值判断是否需要使用动态高度                                 | number        | 0      |
+| overscan            | 展示列表上下视区上、下额外展示的 dom 节点数量预留项                                      | number        | 5      |
+| animation           | 是否开启动画（仅在使用钩子时有效）                                                       | Boolean       | false  |
 
 ### Lost Slot
 
