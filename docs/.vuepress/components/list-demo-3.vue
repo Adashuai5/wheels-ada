@@ -9,9 +9,9 @@
       :originalList="originalList"
       :itemHeight="itemHeight"
       style="width: 500px; height: 600px;"
-      @add="onAdd"
-      @remove="onRemove"
-      @change="onChange"
+      @added="onAdd"
+      @removed="onRemove"
+      @changed="onChange"
     >
       <template #items="{ visibleData }">
         <div
@@ -27,20 +27,30 @@
     </w-list>
   </div>
 </template>
-
+<style>
+.w-toast {
+  z-index: 30 !important;
+}
+</style>
 <script>
+import Vue from "vue";
 import List from "../../../src/list";
 import Button from "../../../src/button";
+import Toast from "../../../src/toast";
+import plugin from "../../../src/plugin";
+
+Vue.use(plugin);
 
 export default {
   components: {
     "w-list": List,
+    "w-toast": Toast,
     "w-button": Button,
   },
   data() {
     return {
       originalList: [],
-      itemHeight: 50,
+      itemHeight: 60,
       i: 0,
     };
   },

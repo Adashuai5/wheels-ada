@@ -6,7 +6,9 @@
         <div v-if="enableHTML" v-html="$slots.default[0]"></div>
       </div>
       <div class="line" ref="line"></div>
-      <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+      <span class="close" v-if="closeButton" @click="onClickClose">{{
+        closeButton.text
+      }}</span>
     </div>
   </div>
 </template>
@@ -19,28 +21,28 @@ export default {
       default: 5,
       validator(value) {
         return value === false || typeof value === "number";
-      }
+      },
     },
     closeButton: {
       type: Object,
       default() {
         return {
           text: "关闭",
-          callback: undefined
+          callback: undefined,
         };
-      }
+      },
     },
     enableHTML: {
       type: Boolean,
-      default: false
+      default: false,
     },
     position: {
       type: String,
       default: "top",
       validator(value) {
         return ["top", "bottom", "middle"].indexOf(value) >= 0;
-      }
-    }
+      },
+    },
   },
   mounted() {
     this.updateStyles();
@@ -49,16 +51,17 @@ export default {
   computed: {
     toastClasses() {
       return {
-        [`position-${this.position}`]: true
+        [`position-${this.position}`]: true,
       };
-    }
+    },
   },
   methods: {
     updateStyles() {
       this.$nextTick(() => {
-        this.$refs.line.style.height = `${
-          this.$refs.toast.getBoundingClientRect().height
-        }px`;
+        this.$refs.line &&
+          (this.$refs.line.style.height = `${
+            this.$refs.toast.getBoundingClientRect().height
+          }px`);
       });
     },
     execAutoClose() {
@@ -80,8 +83,8 @@ export default {
       this.close();
       if (this.closeButton && typeof this.closeButton.callback === "function")
         this.closeButton.callback(this);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped lang="scss">

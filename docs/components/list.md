@@ -20,7 +20,9 @@ title: List 列表
 
 #### 代码
 
-```html
+通过[插槽 prop](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD)提供了 visibleData 用作数据展示，你可以通过其渲染你想要的列表
+
+```html{6}
 <w-list
   :originalList="originalList"
   :itemHeight="itemHeight"
@@ -53,7 +55,7 @@ created() {
 }
 ```
 
-## 无限加载
+## 无限滚动渲染
 
 #### 浏览
 
@@ -106,7 +108,7 @@ methods: {
 }
 ```
 
-## 动画
+## 列表数据变化回调及动画
 
 #### 浏览
 
@@ -116,9 +118,13 @@ methods: {
 <list-demo-3 />
 </ClientOnly>
 
+:::tip
+组件默认不开启动画，如需要给更改列表数据操作添加动画，不要忘记 animation 属性
+:::
+
 #### 代码
 
-```html{5}
+```html{5,9,10,11}
 <div>
   <w-button @click="addList" style="margin-bottom: 10px;">add</w-button>
   <w-button @click="shuffleList" style="margin-bottom: 10px;">shuffle</w-button>
@@ -127,9 +133,9 @@ methods: {
     :originalList="originalList"
     :itemHeight="itemHeight"
     style="width: 500px; height: 600px;"
-    @add="onAdd"
-    @remove="onRemove"
-    @change="onChange"
+    @added="onAdd"
+    @removed="onRemove"
+    @changed="onChange"
   >
     <template #items="{ visibleData }">
       <div
@@ -200,3 +206,84 @@ methods: {
   },
 },
 ```
+
+## 动态高度
+
+有时你的列表元素高度并非静态像素，此时你可以传入 estimatedItemSize 作为初始化展示高度，在视图更新时组件会还原元素真实高度
+
+:::tip
+在元素高度一致时尽量使用性能更好的静态高度
+:::
+
+#
+
+<ClientOnly>
+<list-demo-4 />
+</ClientOnly>
+
+#### 代码
+
+```html{4}
+<w-list
+  :originalList="originalList"
+  :itemHeight="itemHeight"
+  :estimatedItemSize="50"
+  style="width: 500px; height: 600px;"
+>
+  <template #items="{ visibleData }">
+    <div
+      class="item"
+      v-for="(item, index) in visibleData"
+      :key="item.id"
+      :style="{
+          height: itemHeight[index] + 'px',
+          lineHeight: itemHeight[index] + 'px',
+        }"
+    >
+      {{ item.value }}
+    </div>
+  </template>
+</w-list>
+```
+
+```js
+data() {
+  return {
+    originalList: [],
+    itemHeight: [],
+  };
+},
+created() {
+  for (let i = 0; i < 9999; i++) {
+    this.originalList.push({ id: i, value: i });
+    this.itemHeight.push(Math.floor(Math.random() * 100) + 10);
+  }
+}
+```
+
+---
+
+### 参数
+
+| 参数                | 说明                                                                                    | 类型          | 默认值 |
+| ------------------- | --------------------------------------------------------------------------------------- | ------------- | ------ |
+| originalList        | 包含大量数据的列表                                                                      | array         | []     |
+| itemHeight          | 行高度，静态高度可以直接写入像素值；动态高度可填入数组（仅适合开启 estimatedItemHeight） | number, array | 80     |
+| estimatedItemHeight | 行预估高度，组件通过是否传入该值判断是否需要使用动态高度                                | number        | 0      |
+| overscan            | 展示列表上下视区上、下额外展示的 dom 节点数量预留项                                     | number        | 5      |
+| animation           | 是否开启动画（仅在使用钩子时有效）                                                      | Boolean       | false  |
+
+### Lost Slot
+
+| name  | 返回参数    | 说明                   | 类型                        |
+| ----- | ----------- | ---------------------- | --------------------------- |
+| items | visibleData | 当前需要展示的列表内容 | array 如[{id: 1, value: 1}] |
+
+### Hooks
+
+| 方法名 | 说明                                                          | 类型 |
+| ------ | ------------------------------------------------------------- | ---- |
+| scroll | 列表滚动到底触发                                              | -    |
+| add    | 新增列表项触发，可配合 animation 使用                         | -    |
+| remove | 列表项删除触发，可配合 animation 使用                         | -    |
+| change | 列表项变化触发（上述两个操作也会触发），可配合 animation 使用 | -    |
