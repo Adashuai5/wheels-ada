@@ -20,6 +20,7 @@ import TabsPane from "./tabs-pane";
 import Popover from "./popover";
 import Collapse from "./collapse";
 import CollapseItem from "./collapse-item";
+import List from "./list";
 
 Vue.component("w-button", Button);
 Vue.component("w-icon", Icon);
@@ -42,6 +43,7 @@ Vue.component("w-tabs-pane", TabsPane);
 Vue.component("w-popover", Popover);
 Vue.component("w-collapse", Collapse);
 Vue.component("w-collapse-item", CollapseItem);
+Vue.component("w-list", List);
 
 new Vue({
   el: "#app",
@@ -61,7 +63,7 @@ new Vue({
     showToast3() {
       this.showToast("bottom");
     },
-    showToast(position) {
+    showToast() {
       this.$toast(`更新成功,第${parseInt(Math.random() * 100)}号按钮`, {
         enableHTML: false,
         autoClose: false,
