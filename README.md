@@ -31,6 +31,7 @@ wheels-ada UI 是一个实用的 UI 简易框架，目前提供了一些常用�
 - [x] Tabs（标签页）
 - [x] Popover（弹出框）
 - [x] Collapse（折叠面板）
+- [x] List（列表）
 
 ## 介绍
 

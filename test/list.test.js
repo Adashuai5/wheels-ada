@@ -1,6 +1,6 @@
 const expect = chai.expect;
 import Vue from "vue";
-import List from "../src/List";
+import List from "../src/list.vue";
 
 Vue.config.productionTip = false;
 Vue.config.devtools = false;
