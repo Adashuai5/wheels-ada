@@ -9,7 +9,8 @@ wheels-ada UI 是一个实用的 UI 简易框架，目前提供了一些常用�
 
 ## 现已支持
 
-Button（按钮）:tada: 、Input（输入框）:tada: 、Grid（栅栏）:tada: 、Layout（布局）:tada: 、Toast（吐司弹出）:tada: 、Tabs（标签页）:tada: 、Popover（弹出框）:tada: 、Collapse（折叠面板）:tada:
+Button（按钮）:tada: 、Input（输入框）:tada: 、Grid（栅栏）:tada: 、Layout（布局）:tada: 、Toast（吐司弹出）:tada: 、Tabs（标签页）:tada: 、Popover（弹出框）:tada: 、Collapse（折叠面板）:tada: 、List（列表）:tada:
+
 
 ## why wheels
 
